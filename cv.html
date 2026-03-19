@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samitha Sahan Bandara — Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ─── Variables ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:      #000000;
+      --bg2:     #0a0a0a;
+      --card:    #1c1c1e;
+      --card2:   #2c2c2e;
+      --border:  rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.13);
+      --text:    #f5f5f7;
+      --text2:   #a1a1a6;
+      --text3:   #636366;
+      --blue:    #0A84FF;
+      --purple:  #BF5AF2;
+      --grad:    linear-gradient(135deg, #0A84FF 0%, #BF5AF2 100%);
+      --font:    'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto; padding: 0 24px;
+      height: 52px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 0.85rem; font-weight: 650; letter-spacing: -0.02em;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .nav-back {
+      font-size: 0.78rem; font-weight: 450; color: var(--text2);
+      display: flex; align-items: center; gap: 5px; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+    .btn-print {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.78rem; font-weight: 550; letter-spacing: -0.01em;
+      color: white; background: var(--blue);
+      border: none; border-radius: 20px; padding: 7px 16px; cursor: pointer;
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+    .btn-print:hover { opacity: 0.85; box-shadow: 0 6px 20px rgba(10,132,255,0.35); }
+
+    /* ─── Page Wrapper ───────────────────────────────────────── */
+    .page-wrap {
+      max-width: 860px; margin: 0 auto; padding: 48px 24px 80px;
+    }
+
+    /* ─── CV Header ──────────────────────────────────────────── */
+    .cv-header {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 44px; margin-bottom: 24px;
+      position: relative; overflow: hidden;
+    }
+    .cv-header::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(10,132,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cv-header::after {
+      content: ''; position: absolute; bottom: -60px; left: -40px;
+      width: 250px; height: 250px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(191,90,242,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cv-name {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 1.05;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .cv-title {
+      font-size: 1rem; font-weight: 400; color: var(--text2);
+      letter-spacing: -0.015em; margin-bottom: 24px; line-height: 1.4;
+    }
+    .cv-title strong {
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;
+    }
+    .cv-contact { display: flex; flex-wrap: wrap; gap: 16px; }
+    .cv-contact-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.795rem; color: var(--text2); letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+    .cv-contact-item:hover { color: var(--text); }
+    .cv-contact-item span { color: var(--blue); }
+
+    /* ─── CV Body Grid ───────────────────────────────────────── */
+    .cv-body { display: grid; grid-template-columns: 1fr 280px; gap: 16px; align-items: start; }
+
+    /* ─── CV Section ─────────────────────────────────────────── */
+    .cv-section {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px 32px; margin-bottom: 0;
+    }
+    .cv-col-left { display: flex; flex-direction: column; gap: 16px; }
+    .cv-col-right { display: flex; flex-direction: column; gap: 16px; }
+
+    .cv-sec-title {
+      font-size: 0.68rem; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .cv-sec-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* Experience entries */
+    .cv-entry { margin-bottom: 24px; }
+    .cv-entry:last-child { margin-bottom: 0; }
+    .cv-entry-header {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 3px;
+    }
+    .cv-entry-role { font-size: 0.93rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+    .cv-entry-date {
+      font-size: 0.68rem; font-weight: 550; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--blue); white-space: nowrap; margin-top: 2px; flex-shrink: 0;
+    }
+    .cv-entry-org { font-size: 0.82rem; font-weight: 550; color: var(--text2); margin-bottom: 8px; }
+    .cv-entry-body { font-size: 0.825rem; color: var(--text2); line-height: 1.72; }
+    .cv-entry-body ul { padding-left: 1.1em; }
+    .cv-entry-body li { margin-bottom: 4px; }
+    .cv-entry-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .cv-tag {
+      font-size: 0.67rem; font-weight: 500; color: var(--text3);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 5px; padding: 3px 7px;
+    }
+    .cv-entry-super { font-size: 0.75rem; color: var(--text3); margin-top: 6px; font-style: italic; }
+    .cv-entry-super span { color: var(--text2); font-style: normal; }
+    .cv-sep { height: 1px; background: var(--border); margin: 20px 0; }
+
+    /* Education */
+    .cv-edu-degree { font-size: 0.93rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-bottom: 3px; }
+    .cv-edu-uni { font-size: 0.82rem; font-weight: 550; color: var(--text2); margin-bottom: 6px; }
+    .cv-edu-detail { font-size: 0.795rem; color: var(--text2); line-height: 1.65; }
+    .cv-edu-date { font-size: 0.68rem; color: var(--blue); font-weight: 550; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 8px; }
+
+    /* Skills grid inside CV */
+    .cv-skill-group { margin-bottom: 16px; }
+    .cv-skill-group:last-child { margin-bottom: 0; }
+    .cv-skill-cat { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em; color: var(--text); margin-bottom: 7px; }
+    .cv-skill-items { display: flex; flex-wrap: wrap; gap: 5px; }
+    .cv-skill-item {
+      font-size: 0.72rem; color: var(--text2); background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border); border-radius: 5px; padding: 3px 8px;
+    }
+
+    /* Right-col profile card */
+    .cv-profile-card { text-align: center; padding: 28px 24px; }
+    .cv-avatar {
+      width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 14px;
+      background: linear-gradient(135deg, rgba(10,132,255,0.3) 0%, rgba(191,90,242,0.3) 100%);
+      border: 2px solid var(--border2);
+      display: flex; align-items: center; justify-content: center; font-size: 1.75rem;
+    }
+    .cv-profile-name { font-size: 0.92rem; font-weight: 700; letter-spacing: -0.025em; color: var(--text); margin-bottom: 4px; }
+    .cv-profile-tagline { font-size: 0.76rem; color: var(--text2); line-height: 1.5; }
+
+    /* Right-col socials */
+    .cv-social-item {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 0.78rem; color: var(--text2); padding: 8px 0;
+      border-bottom: 1px solid var(--border); transition: color 0.2s;
+    }
+    .cv-social-item:last-child { border-bottom: none; }
+    .cv-social-item:hover { color: var(--text); }
+    .cv-social-icon { color: var(--blue); flex-shrink: 0; }
+
+    /* Footer */
+    .cv-footer {
+      text-align: center; margin-top: 32px;
+      font-size: 0.72rem; color: var(--text3); letter-spacing: -0.01em;
+    }
+    .cv-footer a { color: var(--text2); }
+
+    /* ─── Print Styles ───────────────────────────────────────── */
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { background: #000 !important; }
+      nav { display: none !important; }
+      .page-wrap { padding: 20px; }
+      .cv-header { break-inside: avoid; }
+      .cv-section { break-inside: avoid; page-break-inside: avoid; }
+      .cv-entry { break-inside: avoid; }
+      .cv-body { grid-template-columns: 1fr 240px; }
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-col-right { order: -1; }
+      .cv-profile-card { display: flex; align-items: center; gap: 16px; text-align: left; }
+      .cv-avatar { margin: 0; flex-shrink: 0; }
+      .cv-header { padding: 28px 24px; }
+      .cv-entry-header { flex-direction: column; gap: 4px; }
+      .page-wrap { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">Curriculum Vitae</span>
+    <div class="nav-right">
+      <a href="index.html" class="nav-back">
+        <i data-lucide="arrow-left" style="width:13px;height:13px;"></i>
+        Back to Portfolio
+      </a>
+      <button class="btn-print" onclick="window.print()">
+        <i data-lucide="printer" style="width:13px;height:13px;"></i>
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- ── CV Header ────────────────────────────────────────────── -->
+  <div class="cv-header">
+    <div class="cv-name">Samitha Sahan Bandara</div>
+    <div class="cv-title">
+      <strong>Engineering Undergraduate</strong> &amp; <strong>Deep Learning Researcher</strong><br>
+      Specializing in Vision-Language Models &amp; 4D Visual Grounding
+    </div>
+    <div class="cv-contact">
+      <a href="https://linkedin.com/in/samithasahan" target="_blank" class="cv-contact-item">
+        <i data-lucide="linkedin" style="width:13px;height:13px;color:#0A84FF;"></i>
+        linkedin.com/in/samithasahan
+      </a>
+      <a href="https://github.com/samithasahan" target="_blank" class="cv-contact-item">
+        <i data-lucide="github" style="width:13px;height:13px;color:#0A84FF;"></i>
+        github.com/samithasahan
+      </a>
+      <a href="https://scholar.google.com" target="_blank" class="cv-contact-item">
+        <i data-lucide="graduation-cap" style="width:13px;height:13px;color:#0A84FF;"></i>
+        Google Scholar
+      </a>
+      <a href="mailto:samitha@example.com" class="cv-contact-item">
+        <i data-lucide="mail" style="width:13px;height:13px;color:#0A84FF;"></i>
+        samitha@example.com
+      </a>
+      <a href="https://huggingface.co" target="_blank" class="cv-contact-item">
+        <i data-lucide="box" style="width:13px;height:13px;color:#0A84FF;"></i>
+        HuggingFace
+      </a>
+    </div>
+  </div>
+
+  <!-- ── CV Body ───────────────────────────────────────────────── -->
+  <div class="cv-body">
+
+    <!-- Left column -->
+    <div class="cv-col-left">
+
+      <!-- Summary -->
+      <div class="cv-section">
+        <div class="cv-sec-title">Profile</div>
+        <p style="font-size:0.875rem;color:var(--text2);line-height:1.78;letter-spacing:-0.01em;">
+          Engineering undergraduate at the University of Moratuwa with hands-on research experience
+          at A*STAR IHPC (Singapore) and the M3S SMART Lab (SMU/SUTD). Specializing in
+          <strong style="color:var(--text);">Computer Vision</strong>,
+          <strong style="color:var(--text);">Multimodal LLMs</strong>, and
+          <strong style="color:var(--text);">4D Visual Grounding</strong>.
+          Passionate about building efficient, interpretable deep learning systems that bridge
+          language and visual perception.
+        </p>
+      </div>
+
+      <!-- Experience -->
+      <div class="cv-section">
+        <div class="cv-sec-title">Research Experience</div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-role">Research Intern — 4D Visual Grounding</div>
+            <div class="cv-entry-date">Jul 2025 – Present</div>
+          </div>
+          <div class="cv-entry-org">A*STAR Institute of High Performance Computing (IHPC) · Singapore</div>
+          <div class="cv-entry-body">
+            <ul>
+              <li>Research on grounding natural language instructions in dynamic 4D point cloud scenes for embodied AI systems.</li>
+              <li>Designing architectures for spatiotemporal feature alignment between language and 3D visual tokens.</li>
+              <li>Developing evaluation benchmarks for temporal and spatial reasoning in dynamic environments.</li>
+            </ul>
+          </div>
+          <div class="cv-entry-tags">
+            <span class="cv-tag">4D Grounding</span>
+            <span class="cv-tag">Point Clouds</span>
+            <span class="cv-tag">Embodied AI</span>
+            <span class="cv-tag">PyTorch</span>
+          </div>
+          <div class="cv-entry-super">Supervised by <span>Dr. Vigneshwaran Subbaraju</span></div>
+        </div>
+
+        <div class="cv-sep"></div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-role">Research Collaborator — Multimodal Learning</div>
+            <div class="cv-entry-date">Dec 2024 – Jun 2025</div>
+          </div>
+          <div class="cv-entry-org">SMU · SUTD · M3S SMART Lab · Singapore</div>
+          <div class="cv-entry-body">
+            <ul>
+              <li>Contributed to <strong style="color:var(--text);">FreqPAC</strong> — a frequency-domain preference-aligned contrastive optimization framework for VLMs.</li>
+              <li>Designed training strategies combining RLHF, spectral embedding analysis, and contrastive learning.</li>
+              <li>Validated alignment improvements on VQA, instruction-following, and visual reasoning benchmarks.</li>
+            </ul>
+          </div>
+          <div class="cv-entry-tags">
+            <span class="cv-tag">FreqPAC</span>
+            <span class="cv-tag">Preference Optimization</span>
+            <span class="cv-tag">RLHF</span>
+            <span class="cv-tag">Multimodal LLMs</span>
+          </div>
+          <div class="cv-entry-super">With <span>Prof. Archan Misra</span> &amp; <span>Dr. Dulanga Weerakoon</span></div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-section">
+        <div class="cv-sec-title">Education</div>
+        <div class="cv-edu-degree">B.Sc. Engineering (Honours)</div>
+        <div class="cv-edu-uni">University of Moratuwa · Department of ENTC</div>
+        <div class="cv-edu-detail">
+          Electronics &amp; Telecommunication Engineering. Relevant coursework: Deep Learning,
+          Computer Vision, Digital Signal Processing, Advanced Algorithms, Embedded Systems.
+        </div>
+        <div class="cv-edu-date">2022 – Present</div>
+      </div>
+
+      <!-- Projects -->
+      <div class="cv-section">
+        <div class="cv-sec-title">Selected Projects</div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-role">FreqPAC</div>
+            <div class="cv-entry-date">2024 – 2025</div>
+          </div>
+          <div class="cv-entry-body">Frequency-domain preference-aligned contrastive optimization for multimodal LLMs. Improves instruction following by operating in spectral embedding space.</div>
+          <div class="cv-entry-tags"><span class="cv-tag">PyTorch</span><span class="cv-tag">Transformers</span><span class="cv-tag">RLHF</span></div>
+        </div>
+
+        <div class="cv-sep"></div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-role">4D Grounding Benchmark</div>
+            <div class="cv-entry-date">2025</div>
+          </div>
+          <div class="cv-entry-body">Evaluation framework for benchmarking language grounding in dynamic 4D point cloud scenes with temporal query generation and spatial reasoning metrics.</div>
+          <div class="cv-entry-tags"><span class="cv-tag">Point Clouds</span><span class="cv-tag">Benchmark</span><span class="cv-tag">Python</span></div>
+        </div>
+
+        <div class="cv-sep"></div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-role">VLM KV-Cache Compression</div>
+            <div class="cv-entry-date">2024</div>
+          </div>
+          <div class="cv-entry-body">Adaptive KV-cache eviction using cross-attention head importance scoring. Achieves 3× memory reduction with &lt;1% accuracy loss on standard VLM benchmarks.</div>
+          <div class="cv-entry-tags"><span class="cv-tag">Efficient Inference</span><span class="cv-tag">CUDA</span><span class="cv-tag">PyTorch</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right column -->
+    <div class="cv-col-right">
+
+      <!-- Profile card -->
+      <div class="cv-section cv-profile-card">
+        <div class="cv-avatar">🧠</div>
+        <div>
+          <div class="cv-profile-name">Samitha Sahan Bandara</div>
+          <div class="cv-profile-tagline">Deep Learning Researcher<br>Vision-Language Models · 4D Grounding</div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="cv-section">
+        <div class="cv-sec-title">Links</div>
+        <a href="https://linkedin.com" target="_blank" class="cv-social-item">
+          <i data-lucide="linkedin" class="cv-social-icon" style="width:13px;height:13px;"></i>
+          LinkedIn
+        </a>
+        <a href="https://github.com" target="_blank" class="cv-social-item">
+          <i data-lucide="github" class="cv-social-icon" style="width:13px;height:13px;"></i>
+          GitHub
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="cv-social-item">
+          <i data-lucide="graduation-cap" class="cv-social-icon" style="width:13px;height:13px;"></i>
+          Google Scholar
+        </a>
+        <a href="https://medium.com" target="_blank" class="cv-social-item">
+          <i data-lucide="pen-line" class="cv-social-icon" style="width:13px;height:13px;"></i>
+          Medium
+        </a>
+        <a href="https://huggingface.co" target="_blank" class="cv-social-item">
+          <i data-lucide="box" class="cv-social-icon" style="width:13px;height:13px;"></i>
+          HuggingFace
+        </a>
+        <a href="https://x.com" target="_blank" class="cv-social-item">
+          <i data-lucide="twitter" class="cv-social-icon" style="width:13px;height:13px;"></i>
+          X / Twitter
+        </a>
+        <a href="https://instagram.com" target="_blank" class="cv-social-item">
+          <i data-lucide="instagram" class="cv-social-icon" style="width:13px;height:13px;"></i>
+          Instagram
+        </a>
+      </div>
+
+      <!-- Skills -->
+      <div class="cv-section">
+        <div class="cv-sec-title">Technical Skills</div>
+        <div class="cv-skill-group">
+          <div class="cv-skill-cat">Deep Learning</div>
+          <div class="cv-skill-items">
+            <span class="cv-skill-item">PyTorch</span>
+            <span class="cv-skill-item">JAX</span>
+            <span class="cv-skill-item">Transformers</span>
+            <span class="cv-skill-item">Flash Attn</span>
+          </div>
+        </div>
+        <div class="cv-skill-group" style="margin-top:14px;">
+          <div class="cv-skill-cat">Vision-Language</div>
+          <div class="cv-skill-items">
+            <span class="cv-skill-item">LLaVA</span>
+            <span class="cv-skill-item">CLIP</span>
+            <span class="cv-skill-item">InternVL</span>
+            <span class="cv-skill-item">BLIP-2</span>
+          </div>
+        </div>
+        <div class="cv-skill-group" style="margin-top:14px;">
+          <div class="cv-skill-cat">Infrastructure</div>
+          <div class="cv-skill-items">
+            <span class="cv-skill-item">CUDA/Triton</span>
+            <span class="cv-skill-item">vLLM</span>
+            <span class="cv-skill-item">HuggingFace</span>
+            <span class="cv-skill-item">W&amp;B</span>
+          </div>
+        </div>
+        <div class="cv-skill-group" style="margin-top:14px;">
+          <div class="cv-skill-cat">Languages</div>
+          <div class="cv-skill-items">
+            <span class="cv-skill-item">Python</span>
+            <span class="cv-skill-item">C++</span>
+            <span class="cv-skill-item">MATLAB</span>
+            <span class="cv-skill-item">Bash</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Research Interests -->
+      <div class="cv-section">
+        <div class="cv-sec-title">Research Interests</div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div style="font-size:0.78rem;color:var(--text2);display:flex;align-items:center;gap:7px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;"></span>
+            4D Visual Grounding
+          </div>
+          <div style="font-size:0.78rem;color:var(--text2);display:flex;align-items:center;gap:7px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;"></span>
+            Vision-Language Models
+          </div>
+          <div style="font-size:0.78rem;color:var(--text2);display:flex;align-items:center;gap:7px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0;"></span>
+            Multimodal Alignment
+          </div>
+          <div style="font-size:0.78rem;color:var(--text2);display:flex;align-items:center;gap:7px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0;"></span>
+            Preference Optimization
+          </div>
+          <div style="font-size:0.78rem;color:var(--text2);display:flex;align-items:center;gap:7px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0;"></span>
+            Efficient Inference
+          </div>
+          <div style="font-size:0.78rem;color:var(--text2);display:flex;align-items:center;gap:7px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;"></span>
+            Embodied AI
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cv-footer">
+    <p>Samitha Sahan Bandara · Curriculum Vitae · <a href="index.html">samithasahan.dev</a></p>
+    <p style="margin-top:4px;">Generated <span id="gendate"></span></p>
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('gendate').textContent = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+</script>
+</body>
+</html>
