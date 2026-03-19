@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,9 @@
   <style>
     /* ─── Variables & Reset ─────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
+
+    /* Dark theme (default) */
+    :root, [data-theme="dark"] {
       --bg:          #000000;
       --bg2:         #0a0a0a;
       --card:        #1c1c1e;
@@ -32,7 +34,40 @@
       --font:        'Inter', system-ui, -apple-system, sans-serif;
       --radius:      16px;
       --radius-sm:   10px;
+      --nav-bg:      rgba(0,0,0,0.72);
+      --mobile-bg:   rgba(10,10,10,0.97);
+      --scrollbar:   #333;
     }
+
+    /* Light theme */
+    [data-theme="light"] {
+      --bg:          #f5f5f7;
+      --bg2:         #ffffff;
+      --card:        rgba(255,255,255,0.85);
+      --card2:       #e8e8ed;
+      --border:      rgba(0,0,0,0.07);
+      --border2:     rgba(0,0,0,0.14);
+      --text:        #1d1d1f;
+      --text2:       #6e6e73;
+      --text3:       #aeaeb2;
+      --blue:        #007AFF;
+      --purple:      #9f59d9;
+      --teal:        #28a745;
+      --grad:        linear-gradient(135deg, #007AFF 0%, #9f59d9 100%);
+      --grad2:       linear-gradient(135deg, #007AFF 0%, #5856D6 50%, #9f59d9 100%);
+      --glow-blue:   rgba(0,122,255,0.18);
+      --glow-purple: rgba(159,89,217,0.15);
+      --nav-bg:      rgba(245,245,247,0.82);
+      --mobile-bg:   rgba(248,248,250,0.98);
+      --scrollbar:   #ccc;
+    }
+    [data-theme="light"] body::after { opacity: 0.010; }
+    [data-theme="light"] .blob-1 { background: radial-gradient(circle, rgba(0,122,255,0.10) 0%, transparent 70%); }
+    [data-theme="light"] .blob-2 { background: radial-gradient(circle, rgba(159,89,217,0.07) 0%, transparent 70%); }
+    [data-theme="light"] .blob-3 { background: radial-gradient(circle, rgba(86,84,214,0.05) 0%, transparent 70%); }
+    [data-theme="light"] .sec-divider { background: linear-gradient(90deg, transparent, rgba(0,0,0,0.07) 30%, rgba(0,0,0,0.07) 70%, transparent); }
+    [data-theme="light"] .tl-card:hover { box-shadow: 0 24px 60px -10px rgba(0,0,0,0.12), 0 0 0 1px var(--border2); }
+    [data-theme="light"] .nav-links a:hover { background: rgba(0,0,0,0.04); }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
       font-family: var(--font);
@@ -41,10 +76,11 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
     }
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 3px; }
     ::selection { background: rgba(10,132,255,0.3); }
     a { text-decoration: none; color: inherit; }
 
@@ -76,11 +112,11 @@
     /* ─── NAV ────────────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(0,0,0,0.65);
+      background: var(--nav-bg);
       backdrop-filter: blur(28px) saturate(180%);
       -webkit-backdrop-filter: blur(28px) saturate(180%);
       border-bottom: 1px solid var(--border);
-      transition: background 0.3s;
+      transition: background 0.4s ease, border-color 0.4s ease;
     }
     .nav-inner {
       max-width: 1000px; margin: 0 auto; padding: 0 24px;
@@ -109,9 +145,9 @@
     .hamburger span { display: block; width: 20px; height: 1.5px; background: var(--text2); border-radius: 2px; transition: 0.3s; }
     .mobile-menu {
       display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99;
-      background: rgba(10,10,10,0.97); backdrop-filter: blur(20px);
+      background: var(--mobile-bg); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border); padding: 16px 24px 20px;
-      flex-direction: column; gap: 4px;
+      flex-direction: column; gap: 4px; transition: background 0.4s;
     }
     .mobile-menu a {
       font-size: 0.9rem; font-weight: 450; color: var(--text2);
@@ -128,6 +164,89 @@
     .reveal.d3 { transition-delay: 0.24s; }
     .reveal.d4 { transition-delay: 0.32s; }
     .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── Theme Toggle ───────────────────────────────────────── */
+    .theme-toggle {
+      display: flex; align-items: center;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 3px; gap: 2px;
+      transition: border-color 0.3s, background 0.4s;
+    }
+    .theme-btn {
+      width: 28px; height: 28px; border: none; border-radius: 16px;
+      background: transparent; color: var(--text3); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, color 0.2s; font-size: 0.68rem;
+      font-family: var(--font); font-weight: 550; letter-spacing: -0.01em;
+    }
+    .theme-btn.active { background: var(--blue); color: white; }
+    .theme-btn:hover:not(.active) { color: var(--text2); }
+
+    /* ─── Hero layout with image ─────────────────────────────── */
+    .hero-layout {
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 48px; align-items: center;
+    }
+    .hero-left { min-width: 0; }
+    .hero-image-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      flex-shrink: 0;
+    }
+    .hero-avatar {
+      width: 220px; height: 220px; border-radius: 28px;
+      position: relative; overflow: hidden;
+      border: 1px solid var(--border2);
+      box-shadow: 0 32px 80px -16px rgba(0,0,0,0.6), 0 0 0 1px var(--border);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .hero-avatar:hover {
+      transform: scale(1.02) translateY(-3px);
+      box-shadow: 0 40px 100px -16px rgba(0,0,0,0.7), 0 0 40px var(--glow-blue), 0 0 0 1px var(--border2);
+    }
+    /* Gradient placeholder — swap src once you have your photo */
+    .hero-avatar img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-avatar-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(145deg, #0a0a0a 0%, #1c1c1e 40%, #0d1a2e 70%, #1a0d2e 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-avatar-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 30%, rgba(10,132,255,0.25) 0%, transparent 55%),
+                  radial-gradient(ellipse at 70% 70%, rgba(191,90,242,0.2) 0%, transparent 55%);
+    }
+    .hero-avatar-placeholder-icon {
+      position: relative; z-index: 1; color: rgba(255,255,255,0.15);
+    }
+    .hero-avatar-ring {
+      position: absolute; inset: -2px; border-radius: 30px;
+      background: var(--grad); opacity: 0; z-index: -1;
+      transition: opacity 0.3s;
+    }
+    .hero-avatar:hover .hero-avatar-ring { opacity: 0.5; }
+    .hero-status {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.72rem; font-weight: 500; color: var(--text2);
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 12px;
+      white-space: nowrap;
+    }
+    .status-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #32D74B;
+      position: relative; flex-shrink: 0;
+    }
+    .status-dot::after {
+      content: ''; position: absolute; inset: -3px; border-radius: 50%;
+      background: rgba(50,215,75,0.3); animation: pulse 1.8s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
 
     /* ─── HERO ───────────────────────────────────────────────── */
     #hero {
@@ -326,15 +445,40 @@
 
     /* ─── FOOTER ─────────────────────────────────────────────── */
     footer {
-      border-top: 1px solid var(--border); padding: 56px 0 40px;
+      border-top: 1px solid var(--border); padding: 64px 0 40px;
       position: relative; z-index: 1;
     }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .footer-name { font-size: 0.875rem; font-weight: 650; letter-spacing: -0.02em; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .footer-copy { font-size: 0.75rem; color: var(--text3); margin-top: 4px; letter-spacing: -0.01em; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 40px; padding-bottom: 48px;
+      border-bottom: 1px solid var(--border); margin-bottom: 32px;
+    }
+    .footer-brand-name {
+      font-size: 0.9rem; font-weight: 650; letter-spacing: -0.025em;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 6px;
+    }
+    .footer-brand-desc {
+      font-size: 0.78rem; color: var(--text3); line-height: 1.6;
+      letter-spacing: -0.01em; max-width: 200px;
+    }
+    .footer-col-title {
+      font-size: 0.68rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text3); margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links a {
+      font-size: 0.795rem; color: var(--text2); letter-spacing: -0.01em;
+      display: inline-flex; align-items: center; gap: 7px; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-copy-text { font-size: 0.73rem; color: var(--text3); letter-spacing: -0.01em; }
     .footer-socials { display: flex; gap: 8px; }
     .footer-icon {
-      width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
       background: var(--card); border: 1px solid var(--border); color: var(--text3);
       transition: all 0.2s;
     }
@@ -344,6 +488,9 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
+      .hero-layout { grid-template-columns: 1fr; gap: 32px; }
+      .hero-image-wrap { flex-direction: row; justify-content: flex-start; }
+      .hero-avatar { width: 100px; height: 100px; border-radius: 18px; }
       .about-grid { grid-template-columns: 1fr; gap: 28px; }
       .timeline-wrap { padding-left: 22px; }
       .tl-node { left: -28px; }
@@ -351,6 +498,7 @@
       .edu-card { grid-template-columns: 1fr; gap: 16px; }
       .projects-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
       section { padding: 64px 0; }
     }
     @media (max-width: 480px) {
@@ -358,6 +506,7 @@
       .social-pill span { display: none; }
       .social-pill { padding: 8px; }
       .skills-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
     }
   </style>
 </head>
@@ -378,9 +527,21 @@
       <a href="#projects">Projects</a>
       <a href="cv.html" class="nav-cv">View CV</a>
     </div>
-    <button class="hamburger" id="ham" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <!-- Theme Toggle -->
+      <div class="theme-toggle" id="themeToggle">
+        <button class="theme-btn active" data-t="dark"  title="Dark">
+          <i data-lucide="moon"  style="width:12px;height:12px;"></i>
+        </button>
+        <button class="theme-btn"        data-t="light" title="Light">
+          <i data-lucide="sun"   style="width:12px;height:12px;"></i>
+        </button>
+        <button class="theme-btn"        data-t="auto"  title="Auto">Auto</button>
+      </div>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -394,54 +555,67 @@
 <!-- ═══ HERO ═══════════════════════════════════════════════════ -->
 <section id="hero">
   <div class="wrap">
+    <div class="hero-layout">
 
-    <div class="hero-chip reveal">
-      <i data-lucide="sparkles" style="width:11px;height:11px;"></i>
-      Open to Research Collaborations
+      <!-- Left: text content -->
+      <div class="hero-left">
+        <div class="hero-chip reveal">
+          <i data-lucide="sparkles" style="width:11px;height:11px;"></i>
+          Open to Research Collaborations
+        </div>
+
+        <h1 class="hero-name reveal d1">Samitha<br>Sahan<br>Bandara.</h1>
+
+        <p class="hero-title reveal d2">
+          <strong>Engineering Undergraduate</strong> &amp; <strong>Deep Learning Researcher</strong><br>
+          — pushing the boundaries of <strong>Vision-Language Models</strong>.
+        </p>
+
+        <div class="hero-actions reveal d3">
+          <a href="#experience" class="btn btn-blue">
+            <i data-lucide="briefcase" style="width:13px;height:13px;"></i>
+            View Experience
+          </a>
+          <a href="cv.html" class="btn btn-outline">
+            <i data-lucide="file-text" style="width:13px;height:13px;"></i>
+            Download CV
+          </a>
+        </div>
+
+        <div class="hero-socials reveal d4">
+          <a href="https://linkedin.com"       target="_blank" class="social-pill"><i data-lucide="linkedin"       style="width:13px;height:13px;"></i><span>LinkedIn</span></a>
+          <a href="https://github.com"         target="_blank" class="social-pill"><i data-lucide="github"         style="width:13px;height:13px;"></i><span>GitHub</span></a>
+          <a href="https://scholar.google.com" target="_blank" class="social-pill"><i data-lucide="graduation-cap" style="width:13px;height:13px;"></i><span>Scholar</span></a>
+          <a href="https://medium.com"         target="_blank" class="social-pill"><i data-lucide="pen-line"       style="width:13px;height:13px;"></i><span>Medium</span></a>
+          <a href="https://huggingface.co"     target="_blank" class="social-pill"><i data-lucide="box"            style="width:13px;height:13px;"></i><span>HuggingFace</span></a>
+          <a href="https://instagram.com"      target="_blank" class="social-pill"><i data-lucide="instagram"      style="width:13px;height:13px;"></i><span>Instagram</span></a>
+          <a href="https://x.com"             target="_blank" class="social-pill"><i data-lucide="twitter"        style="width:13px;height:13px;"></i><span>X</span></a>
+        </div>
+      </div>
+
+      <!-- Right: profile image -->
+      <div class="hero-image-wrap reveal d2">
+        <div class="hero-avatar">
+          <div class="hero-avatar-ring"></div>
+          <!--
+            ═══════════════════════════════════════════════════════
+            TO ADD YOUR PHOTO: replace the placeholder div below
+            with: <img src="your-photo.jpg" alt="Samitha Sahan Bandara" />
+            ═══════════════════════════════════════════════════════
+          -->
+          <div class="hero-avatar-placeholder">
+            <div class="hero-avatar-placeholder-icon">
+              <i data-lucide="user" style="width:72px;height:72px;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="hero-status">
+          <div class="status-dot"></div>
+          Available for Research
+        </div>
+      </div>
+
     </div>
-
-    <h1 class="hero-name reveal d1">Samitha<br>Sahan<br>Bandara.</h1>
-
-    <p class="hero-title reveal d2">
-      <strong>Engineering Undergraduate</strong> &amp; <strong>Deep Learning Researcher</strong><br>
-      — pushing the boundaries of <strong>Vision-Language Models</strong>.
-    </p>
-
-    <div class="hero-actions reveal d3">
-      <a href="#experience" class="btn btn-blue">
-        <i data-lucide="briefcase" style="width:13px;height:13px;"></i>
-        View Experience
-      </a>
-      <a href="cv.html" class="btn btn-outline">
-        <i data-lucide="file-text" style="width:13px;height:13px;"></i>
-        Download CV
-      </a>
-    </div>
-
-    <div class="hero-socials reveal d4">
-      <a href="https://linkedin.com" target="_blank" class="social-pill">
-        <i data-lucide="linkedin" style="width:13px;height:13px;"></i><span>LinkedIn</span>
-      </a>
-      <a href="https://github.com" target="_blank" class="social-pill">
-        <i data-lucide="github" style="width:13px;height:13px;"></i><span>GitHub</span>
-      </a>
-      <a href="https://scholar.google.com" target="_blank" class="social-pill">
-        <i data-lucide="graduation-cap" style="width:13px;height:13px;"></i><span>Scholar</span>
-      </a>
-      <a href="https://medium.com" target="_blank" class="social-pill">
-        <i data-lucide="pen-line" style="width:13px;height:13px;"></i><span>Medium</span>
-      </a>
-      <a href="https://huggingface.co" target="_blank" class="social-pill">
-        <i data-lucide="box" style="width:13px;height:13px;"></i><span>HuggingFace</span>
-      </a>
-      <a href="https://instagram.com" target="_blank" class="social-pill">
-        <i data-lucide="instagram" style="width:13px;height:13px;"></i><span>Instagram</span>
-      </a>
-      <a href="https://x.com" target="_blank" class="social-pill">
-        <i data-lucide="twitter" style="width:13px;height:13px;"></i><span>X</span>
-      </a>
-    </div>
-
   </div>
 </section>
 
@@ -696,11 +870,48 @@
 <!-- ═══ FOOTER ══════════════════════════════════════════════════ -->
 <footer>
   <div class="wrap">
-    <div class="footer-inner">
+
+    <div class="footer-grid reveal">
+      <!-- Brand -->
       <div>
-        <div class="footer-name">Samitha Sahan Bandara</div>
-        <div class="footer-copy">© 2025 · Engineering Undergraduate · Deep Learning Researcher</div>
+        <div class="footer-brand-name">Samitha Sahan Bandara</div>
+        <div class="footer-brand-desc">Engineering Undergraduate · Deep Learning Researcher · Vision-Language Models</div>
       </div>
+
+      <!-- Research -->
+      <div>
+        <div class="footer-col-title">Research</div>
+        <ul class="footer-links">
+          <li><a href="https://scholar.google.com" target="_blank"><i data-lucide="graduation-cap" style="width:12px;height:12px;"></i> Google Scholar</a></li>
+          <li><a href="#projects"><i data-lucide="file-text" style="width:12px;height:12px;"></i> Publications</a></li>
+          <li><a href="cv.html"><i data-lucide="book" style="width:12px;height:12px;"></i> Curriculum Vitae</a></li>
+        </ul>
+      </div>
+
+      <!-- Projects -->
+      <div>
+        <div class="footer-col-title">Projects</div>
+        <ul class="footer-links">
+          <li><a href="https://github.com" target="_blank"><i data-lucide="github" style="width:12px;height:12px;"></i> GitHub</a></li>
+          <li><a href="https://huggingface.co" target="_blank"><i data-lucide="box" style="width:12px;height:12px;"></i> Hugging Face</a></li>
+          <li><a href="https://medium.com" target="_blank"><i data-lucide="pen-line" style="width:12px;height:12px;"></i> Medium</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <ul class="footer-links">
+          <li><a href="https://linkedin.com" target="_blank"><i data-lucide="linkedin" style="width:12px;height:12px;"></i> LinkedIn</a></li>
+          <li><a href="https://x.com" target="_blank"><i data-lucide="twitter" style="width:12px;height:12px;"></i> X / Twitter</a></li>
+          <li><a href="https://instagram.com" target="_blank"><i data-lucide="instagram" style="width:12px;height:12px;"></i> Instagram</a></li>
+          <li><a href="mailto:samitha@example.com"><i data-lucide="mail" style="width:12px;height:12px;"></i> Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom reveal d1">
+      <div class="footer-copy-text">© 2025 Samitha Sahan Bandara · Built with care &amp; caffeine ☕</div>
       <div class="footer-socials">
         <a href="https://linkedin.com"       target="_blank" class="footer-icon"><i data-lucide="linkedin"       style="width:14px;height:14px;"></i></a>
         <a href="https://github.com"         target="_blank" class="footer-icon"><i data-lucide="github"         style="width:14px;height:14px;"></i></a>
@@ -708,21 +919,23 @@
         <a href="https://medium.com"         target="_blank" class="footer-icon"><i data-lucide="pen-line"       style="width:14px;height:14px;"></i></a>
         <a href="https://huggingface.co"     target="_blank" class="footer-icon"><i data-lucide="box"            style="width:14px;height:14px;"></i></a>
         <a href="https://x.com"             target="_blank" class="footer-icon"><i data-lucide="twitter"        style="width:14px;height:14px;"></i></a>
+        <a href="https://instagram.com"     target="_blank" class="footer-icon"><i data-lucide="instagram"      style="width:14px;height:14px;"></i></a>
       </div>
     </div>
+
   </div>
 </footer>
 
 <script>
   lucide.createIcons();
 
-  /* Scroll reveal */
+  /* ── Scroll reveal ── */
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
   }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* 3D hover cards */
+  /* ── 3D hover cards ── */
   document.querySelectorAll('.tl-card, .proj-card, .about-stat-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
@@ -733,11 +946,35 @@
     card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 
-  /* Mobile menu */
+  /* ── Mobile menu ── */
   const ham = document.getElementById('ham');
   const mm  = document.getElementById('mobileMenu');
   ham.addEventListener('click', () => mm.classList.toggle('open'));
   function closeMobile() { mm.classList.remove('open'); }
+
+  /* ── Theme Toggle ── */
+  const html    = document.documentElement;
+  const mq      = window.matchMedia('(prefers-color-scheme: dark)');
+  const tBtns   = document.querySelectorAll('.theme-btn');
+
+  function applyTheme(val) {
+    const resolved = val === 'auto' ? (mq.matches ? 'dark' : 'light') : val;
+    html.setAttribute('data-theme', resolved);
+    tBtns.forEach(b => b.classList.toggle('active', b.dataset.t === val));
+    localStorage.setItem('ssb-theme', val);
+  }
+
+  tBtns.forEach(btn => btn.addEventListener('click', () => applyTheme(btn.dataset.t)));
+
+  mq.addEventListener('change', () => {
+    if (localStorage.getItem('ssb-theme') === 'auto') applyTheme('auto');
+  });
+
+  // Init — default dark
+  applyTheme(localStorage.getItem('ssb-theme') || 'dark');
+
+  // Re-init icons after DOM settle
+  setTimeout(() => lucide.createIcons(), 50);
 </script>
 </body>
 </html>
