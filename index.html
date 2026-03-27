@@ -164,7 +164,7 @@
 
     /* PROJECTS */
     .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:14px;margin-top:2.5rem;}
-    .pc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;transition:border-color .3s,transform .3s cubic-bezier(.2,0,0,1),box-shadow .3s;}
+    .pc{text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;transition:border-color .3s,transform .3s cubic-bezier(.2,0,0,1),box-shadow .3s;}
     .pc:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 20px 50px -10px rgba(0,0,0,.55);}
     .pc-head{display:flex;align-items:center;justify-content:space-between;}
     .pi{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.2);color:var(--blue);}
@@ -190,7 +190,7 @@
     .f-brand{margin-bottom:36px;}
     .fb-name{font-size:.88rem;font-weight:650;letter-spacing:-.025em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px;}
     .fb-desc{font-size:.77rem;color:var(--text3);line-height:1.6;letter-spacing:-.01em;}
-    .fg{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:28px;}
+    .fg{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:40px;padding-bottom:48px;border-bottom:1px solid var(--border);margin-bottom:32px;}
     .fc-title{font-size:.67rem;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.9rem;}
     .fl{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
     .fl a{font-size:.78rem;color:var(--text2);letter-spacing:-.01em;display:inline-flex;align-items:center;gap:7px;transition:color .2s;}
@@ -408,61 +408,61 @@
     <p class="sec-sub  reveal d2">Core AI architectures built from the ground up — no wrappers, all principles</p>
     <div class="proj-grid">
 
-      <div class="pc reveal d1">
-        <div class="pc-head"><div class="pi"><i data-lucide="cpu" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/CoreLlama" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/CoreLlama" target="_blank" class="pc reveal d1">
+        <div class="pc-head"><div class="pi"><i data-lucide="cpu" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">CoreLlama</div>
         <div class="pdesc">Llama 2 from scratch — RMSNorm, RoPE, Grouped Query Attention, KV-Cache, SwiGLU. Full implementation without high-level library wrappers.</div>
         <div class="ptags"><span class="tag">LLM</span><span class="tag">GQA</span><span class="tag">RoPE</span><span class="tag">KV-Cache</span></div>
-      </div>
+      </a>
 
-      <div class="pc reveal d2">
-        <div class="pc-head"><div class="pi pu"><i data-lucide="layers" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/VLM-gamma" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/VLM-gamma" target="_blank" class="pc reveal d2">
+        <div class="pc-head"><div class="pi pu"><i data-lucide="layers" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">VLM-gamma</div>
         <div class="pdesc">Multimodal Vision-Language Model — Transformer decoder + ViT encoder + Grouped Query Attention for image-text reasoning tasks.</div>
         <div class="ptags"><span class="tag">VLM</span><span class="tag">ViT</span><span class="tag">Multimodal</span></div>
-      </div>
+      </a>
 
-      <div class="pc reveal d3">
-        <div class="pc-head"><div class="pi te"><i data-lucide="zap" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/gpt2-lite" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/gpt2-lite" target="_blank" class="pc reveal d3">
+        <div class="pc-head"><div class="pi te"><i data-lucide="zap" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">gpt2-lite</div>
         <div class="pdesc">Full GPT-2 reproduction with optimized training pipeline, GPT-2/3 hyperparameters, and custom BPE tokenizer. End-to-end training run.</div>
         <div class="ptags"><span class="tag">GPT-2</span><span class="tag">BPE</span><span class="tag">Training</span></div>
-      </div>
+      </a>
 
-      <div class="pc reveal d1">
-        <div class="pc-head"><div class="pi or"><i data-lucide="scan-eye" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/nanoViT" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/nanoViT" target="_blank" class="pc reveal d1">
+        <div class="pc-head"><div class="pi or"><i data-lucide="scan-eye" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">nanoViT</div>
-        <div class="pdesc">Vision Transformer from scratch — patch embedding, multi-head self-attention, MLP head, and full image classification pipeline for recognition tasks.</div>
+        <div class="pdesc">Vision Transformer from scratch — patch embedding, multi-head self-attention, MLP head, and full image classification pipeline.</div>
         <div class="ptags"><span class="tag">ViT</span><span class="tag">Attention</span><span class="tag">CV</span></div>
-      </div>
+      </a>
 
-      <div class="pc reveal d2">
-        <div class="pc-head"><div class="pi pu"><i data-lucide="code-2" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/gpt-from-scratch" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/gpt-from-scratch" target="_blank" class="pc reveal d2">
+        <div class="pc-head"><div class="pi pu"><i data-lucide="code-2" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">GPT from Scratch</div>
         <div class="pdesc">Progressive build: Bigram model → full Transformer Decoder with Multi-Head Attention. Training, sampling, and evaluation pipelines included.</div>
         <div class="ptags"><span class="tag">Transformer</span><span class="tag">LM</span><span class="tag">PyTorch</span></div>
-      </div>
+      </a>
 
-      <div class="pc reveal d3">
-        <div class="pc-head"><div class="pi"><i data-lucide="grid-3x3" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/miniVGG" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/miniVGG" target="_blank" class="pc reveal d3">
+        <div class="pc-head"><div class="pi"><i data-lucide="grid-3x3" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">miniVGG</div>
-        <div class="pdesc">VGG-inspired image classifier with custom implementations of convolution, pooling, and fully connected layers — zero high-level APIs.</div>
+        <div class="pdesc">VGG-inspired image classifier with custom convolution, pooling, and fully connected layers — zero high-level APIs.</div>
         <div class="ptags"><span class="tag">CNN</span><span class="tag">VGG</span><span class="tag">From Scratch</span></div>
-      </div>
+      </a>
 
-      <div class="pc reveal d1">
-        <div class="pc-head"><div class="pi te"><i data-lucide="type" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/gpt-from-scratch" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/gpt-from-scratch" target="_blank" class="pc reveal d1">
+        <div class="pc-head"><div class="pi te"><i data-lucide="type" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">GPT Tokenizer</div>
-        <div class="pdesc">BPE training algorithm from scratch — encode() / decode() functions replicating the exact tokenizer used in OpenAI's GPT series, from first principles.</div>
+        <div class="pdesc">BPE training algorithm from scratch — encode() / decode() functions replicating the exact tokenizer used in OpenAI's GPT series.</div>
         <div class="ptags"><span class="tag">BPE</span><span class="tag">Tokenization</span><span class="tag">NLP</span></div>
-      </div>
+      </a>
 
-      <div class="pc reveal d2">
-        <div class="pc-head"><div class="pi or"><i data-lucide="brain" style="width:17px;height:17px;"></i></div><a href="https://github.com/samitha278/multilayer-perceptron-char-lm" target="_blank" class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></a></div>
+      <a href="https://github.com/samitha278/multilayer-perceptron-char-lm" target="_blank" class="pc reveal d2">
+        <div class="pc-head"><div class="pi or"><i data-lucide="brain" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
         <div class="pname">MLP Char-LM</div>
-        <div class="pdesc">Character-level language model with full backpropagation, Batch Normalization, and Kaiming Initialization — all implemented without library shortcuts.</div>
+        <div class="pdesc">Character-level language model with full backpropagation, Batch Normalization, and Kaiming Initialization — no shortcuts.</div>
         <div class="ptags"><span class="tag">MLP</span><span class="tag">BatchNorm</span><span class="tag">PyTorch</span></div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -486,43 +486,38 @@
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-
-    <!-- Brand row (above the columns) -->
-    <div class="f-brand reveal">
-      <div class="fb-name">Samitha Sahan Bandara</div>
-      <div class="fb-desc">Engineering Undergraduate · Deep Learning Researcher · VLM Acceleration</div>
-    </div>
-
-    <!-- 3 equal link columns -->
-    <div class="fg reveal d1">
+    <div class="fg reveal">
+      <div>
+        <div class="fb-name">Samitha Sahan Bandara</div>
+        <div class="fb-desc">Engineering Undergraduate · Deep Learning Researcher · VLM Acceleration</div>
+      </div>
       <div>
         <div class="fc-title">Research</div>
         <ul class="fl">
-          <li><a href="#projects"><i data-lucide="file-text" style="width:12px;height:12px;"></i>Projects</a></li>
-          <li><a href="cv.html"><i data-lucide="book" style="width:12px;height:12px;"></i>Curriculum Vitae</a></li>
+          <li><a href="#projects"><i data-lucide="file-text" style="width:12px;height:12px;"></i> Projects</a></li>
+          <li><a href="cv.html"><i data-lucide="book" style="width:12px;height:12px;"></i> Curriculum Vitae</a></li>
         </ul>
       </div>
       <div>
         <div class="fc-title">Code</div>
         <ul class="fl">
-          <li><a href="https://github.com/samitha278" target="_blank"><i data-lucide="github" style="width:12px;height:12px;"></i>GitHub</a></li>
+          <li><a href="https://github.com/samitha278" target="_blank"><i data-lucide="github" style="width:12px;height:12px;"></i> GitHub</a></li>
         </ul>
       </div>
       <div>
         <div class="fc-title">Connect</div>
         <ul class="fl">
-          <li><a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank"><i data-lucide="linkedin" style="width:12px;height:12px;"></i>LinkedIn</a></li>
-          <li><a href="https://x.com/samitha____" target="_blank"><i data-lucide="twitter" style="width:12px;height:12px;"></i>X / Twitter</a></li>
-          <li><a href="mailto:samithab@smu.edu.sg"><i data-lucide="mail" style="width:12px;height:12px;"></i>Email</a></li>
+          <li><a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank"><i data-lucide="linkedin" style="width:12px;height:12px;"></i> LinkedIn</a></li>
+          <li><a href="https://x.com/samitha____" target="_blank"><i data-lucide="twitter" style="width:12px;height:12px;"></i> X / Twitter</a></li>
+          <li><a href="mailto:samithab@smu.edu.sg"><i data-lucide="mail" style="width:12px;height:12px;"></i> Email</a></li>
         </ul>
       </div>
     </div>
-
-    <!-- Bottom bar -->
-    <div class="fb reveal d2">
+    <div class="fb reveal d1">
       <div class="fb-copy">© 2025 Samitha Sahan Bandara · Built with care &amp; caffeine ☕</div>
       <div class="fsoc">
         <a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" class="fi"><i data-lucide="linkedin" style="width:14px;height:14px;"></i></a>
@@ -531,7 +526,6 @@
         <a href="mailto:samithab@smu.edu.sg"                                        class="fi"><i data-lucide="mail"     style="width:14px;height:14px;"></i></a>
       </div>
     </div>
-
   </div>
 </footer>
 
