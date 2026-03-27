@@ -187,16 +187,17 @@
 
     /* FOOTER */
     footer{border-top:1px solid var(--border);padding:64px 0 40px;position:relative;z-index:1;}
-    .fg{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:40px;padding-bottom:48px;border-bottom:1px solid var(--border);margin-bottom:32px;}
-    .fb-name{font-size:.88rem;font-weight:650;letter-spacing:-.025em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;}
-    .fb-desc{font-size:.77rem;color:var(--text3);line-height:1.6;letter-spacing:-.01em;max-width:200px;}
-    .fc-title{font-size:.67rem;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem;}
+    .f-brand{margin-bottom:36px;}
+    .fb-name{font-size:.88rem;font-weight:650;letter-spacing:-.025em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px;}
+    .fb-desc{font-size:.77rem;color:var(--text3);line-height:1.6;letter-spacing:-.01em;}
+    .fg{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:28px;}
+    .fc-title{font-size:.67rem;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.9rem;}
     .fl{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
     .fl a{font-size:.78rem;color:var(--text2);letter-spacing:-.01em;display:inline-flex;align-items:center;gap:7px;transition:color .2s;}
     .fl a:hover{color:var(--text);}
     .fb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
     .fb-copy{font-size:.72rem;color:var(--text3);letter-spacing:-.01em;}
-    .fsoc{display:flex;gap:8px;}
+    .fsoc{display:flex;gap:8px;align-items:center;}
     .fi{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border);color:var(--text3);transition:all .2s;}
     .fi:hover{color:var(--text);border-color:var(--border2);transform:translateY(-2px);}
 
@@ -219,7 +220,7 @@
       .proj-grid{grid-template-columns:1fr;}
       .hero-socials{gap:6px;} .sp span{display:none;} .sp{padding:7px;}
       .sk-grid{grid-template-columns:1fr;}
-      .fg{grid-template-columns:1fr;gap:28px;}
+      .fg{grid-template-columns:1fr;gap:20px;}
     }
   </style>
 </head>
@@ -273,19 +274,23 @@
           <a href="cv.html"     class="btn btn-out"><i data-lucide="file-text"  style="width:13px;height:13px;"></i>Download CV</a>
         </div>
         <div class="hero-socials reveal d4">
-          <a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" class="sp"><i data-lucide="linkedin"       style="width:13px;height:13px;"></i><span>LinkedIn</span></a>
-          <a href="https://github.com/samitha278"                     target="_blank" class="sp"><i data-lucide="github"         style="width:13px;height:13px;"></i><span>GitHub</span></a>
-          <a href="https://scholar.google.com"                         target="_blank" class="sp"><i data-lucide="graduation-cap" style="width:13px;height:13px;"></i><span>Scholar</span></a>
-          <a href="https://medium.com"                                 target="_blank" class="sp"><i data-lucide="pen-line"       style="width:13px;height:13px;"></i><span>Medium</span></a>
-          <a href="https://huggingface.co"                             target="_blank" class="sp"><i data-lucide="box"            style="width:13px;height:13px;"></i><span>HuggingFace</span></a>
-          <a href="https://instagram.com"                              target="_blank" class="sp"><i data-lucide="instagram"      style="width:13px;height:13px;"></i><span>Instagram</span></a>
-          <a href="https://x.com"                                      target="_blank" class="sp"><i data-lucide="twitter"        style="width:13px;height:13px;"></i><span>X</span></a>
+          <a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" class="sp"><i data-lucide="linkedin" style="width:13px;height:13px;"></i><span>LinkedIn</span></a>
+          <a href="https://github.com/samitha278"                     target="_blank" class="sp"><i data-lucide="github"   style="width:13px;height:13px;"></i><span>GitHub</span></a>
+          <a href="https://x.com/samitha____"                         target="_blank" class="sp"><i data-lucide="twitter"  style="width:13px;height:13px;"></i><span>X</span></a>
         </div>
       </div>
       <div class="hero-img-wrap reveal d2">
         <div class="hero-avatar">
           <div class="avatar-ring"></div>
-          <!-- ═══ REPLACE with: <img src="your-photo.jpg" alt="Samitha Sahan Bandara" /> ═══ -->
+          <!--
+            ══════════════════════════════════════════════════
+            TO ADD YOUR PHOTO (dp.jpeg):
+            1. Put dp.jpeg in the same folder as index.html
+            2. Delete the <div class="hero-ph">...</div> block
+            3. Add this line instead:
+               <img src="dp.jpeg" alt="Samitha Sahan Bandara" />
+            ══════════════════════════════════════════════════
+          -->
           <div class="hero-ph">
             <div class="hero-ph-icon"><i data-lucide="user" style="width:70px;height:70px;"></i></div>
           </div>
@@ -486,49 +491,49 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="fg reveal">
-      <div>
-        <div class="fb-name">Samitha Sahan Bandara</div>
-        <div class="fb-desc">Engineering Undergraduate · Deep Learning Researcher · VLM Acceleration</div>
-      </div>
+
+    <!-- Brand row (above the columns) -->
+    <div class="f-brand reveal">
+      <div class="fb-name">Samitha Sahan Bandara</div>
+      <div class="fb-desc">Engineering Undergraduate · Deep Learning Researcher · VLM Acceleration</div>
+    </div>
+
+    <!-- 3 equal link columns -->
+    <div class="fg reveal d1">
       <div>
         <div class="fc-title">Research</div>
         <ul class="fl">
-          <li><a href="https://scholar.google.com" target="_blank"><i data-lucide="graduation-cap" style="width:12px;height:12px;"></i>Google Scholar</a></li>
           <li><a href="#projects"><i data-lucide="file-text" style="width:12px;height:12px;"></i>Projects</a></li>
           <li><a href="cv.html"><i data-lucide="book" style="width:12px;height:12px;"></i>Curriculum Vitae</a></li>
         </ul>
       </div>
       <div>
-        <div class="fc-title">Projects</div>
+        <div class="fc-title">Code</div>
         <ul class="fl">
-          <li><a href="https://github.com/samitha278" target="_blank"><i data-lucide="github"   style="width:12px;height:12px;"></i>GitHub</a></li>
-          <li><a href="https://huggingface.co"        target="_blank"><i data-lucide="box"      style="width:12px;height:12px;"></i>Hugging Face</a></li>
-          <li><a href="https://medium.com"            target="_blank"><i data-lucide="pen-line" style="width:12px;height:12px;"></i>Medium</a></li>
+          <li><a href="https://github.com/samitha278" target="_blank"><i data-lucide="github" style="width:12px;height:12px;"></i>GitHub</a></li>
         </ul>
       </div>
       <div>
         <div class="fc-title">Connect</div>
         <ul class="fl">
-          <li><a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank"><i data-lucide="linkedin"  style="width:12px;height:12px;"></i>LinkedIn</a></li>
-          <li><a href="https://x.com"         target="_blank"><i data-lucide="twitter"   style="width:12px;height:12px;"></i>X / Twitter</a></li>
-          <li><a href="https://instagram.com" target="_blank"><i data-lucide="instagram" style="width:12px;height:12px;"></i>Instagram</a></li>
+          <li><a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank"><i data-lucide="linkedin" style="width:12px;height:12px;"></i>LinkedIn</a></li>
+          <li><a href="https://x.com/samitha____" target="_blank"><i data-lucide="twitter" style="width:12px;height:12px;"></i>X / Twitter</a></li>
           <li><a href="mailto:samithab@smu.edu.sg"><i data-lucide="mail" style="width:12px;height:12px;"></i>Email</a></li>
         </ul>
       </div>
     </div>
-    <div class="fb reveal d1">
+
+    <!-- Bottom bar -->
+    <div class="fb reveal d2">
       <div class="fb-copy">© 2025 Samitha Sahan Bandara · Built with care &amp; caffeine ☕</div>
       <div class="fsoc">
-        <a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" class="fi"><i data-lucide="linkedin"       style="width:14px;height:14px;"></i></a>
-        <a href="https://github.com/samitha278"                     target="_blank" class="fi"><i data-lucide="github"         style="width:14px;height:14px;"></i></a>
-        <a href="https://scholar.google.com"                         target="_blank" class="fi"><i data-lucide="graduation-cap" style="width:14px;height:14px;"></i></a>
-        <a href="https://medium.com"                                 target="_blank" class="fi"><i data-lucide="pen-line"       style="width:14px;height:14px;"></i></a>
-        <a href="https://huggingface.co"                             target="_blank" class="fi"><i data-lucide="box"            style="width:14px;height:14px;"></i></a>
-        <a href="https://x.com"                                      target="_blank" class="fi"><i data-lucide="twitter"        style="width:14px;height:14px;"></i></a>
-        <a href="https://instagram.com"                              target="_blank" class="fi"><i data-lucide="instagram"      style="width:14px;height:14px;"></i></a>
+        <a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" class="fi"><i data-lucide="linkedin" style="width:14px;height:14px;"></i></a>
+        <a href="https://github.com/samitha278"                     target="_blank" class="fi"><i data-lucide="github"   style="width:14px;height:14px;"></i></a>
+        <a href="https://x.com/samitha____"                         target="_blank" class="fi"><i data-lucide="twitter"  style="width:14px;height:14px;"></i></a>
+        <a href="mailto:samithab@smu.edu.sg"                                        class="fi"><i data-lucide="mail"     style="width:14px;height:14px;"></i></a>
       </div>
     </div>
+
   </div>
 </footer>
 
