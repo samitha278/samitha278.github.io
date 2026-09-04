@@ -1,606 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samitha Sahan Bandara — Deep Learning Researcher</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Samitha Bandara is an AI researcher at the University of Moratuwa working on efficient multimodal AI, 3D/4D perception, and learning-based robotic control.">
+  <meta name="author" content="Samitha Bandara">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#07111f">
+  <link rel="canonical" href="https://samitha278.github.io/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:site_name" content="Samitha Bandara">
+  <meta property="og:title" content="Samitha Bandara | AI Researcher &amp; Engineer">
+  <meta property="og:description" content="Research in efficient multimodal AI, 3D/4D perception, and learning-based robotic control.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://samitha278.github.io/">
+  <meta property="og:image" content="https://samitha278.github.io/dp.jpeg">
+  <meta property="og:image:width" content="795">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Portrait of Samitha Bandara">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Samitha Bandara | AI Researcher &amp; Engineer">
+  <meta name="twitter:description" content="Efficient multimodal AI, 3D/4D perception, and learning-based robotic control.">
+  <meta name="twitter:image" content="https://samitha278.github.io/dp.jpeg">
+  <title>Samitha Bandara | AI Researcher &amp; Engineer</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://samitha278.github.io/#profile",
+    "url": "https://samitha278.github.io/",
+    "name": "Samitha Bandara | AI Researcher & Engineer",
+    "dateModified": "2026-09-04",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://samitha278.github.io/#samitha-bandara",
+      "name": "Samitha Bandara",
+      "alternateName": "samitha278",
+      "url": "https://samitha278.github.io/",
+      "image": "https://samitha278.github.io/dp.jpeg",
+      "description": "AI researcher and final-year Electronic and Telecommunication Engineering undergraduate at the University of Moratuwa, researching efficient multimodal AI, 3D/4D perception, and learning-based robotic control.",
+      "jobTitle": "AI Researcher",
+      "affiliation": [
+        {"@type": "CollegeOrUniversity", "name": "University of Moratuwa", "url": "https://uom.lk/"},
+        {"@type": "CollegeOrUniversity", "name": "Singapore Management University", "url": "https://www.smu.edu.sg/"},
+        {"@type": "Organization", "name": "SMART Mens, Manus and Machina (M3S)", "url": "https://m3s.mit.edu/"}
+      ],
+      "knowsAbout": [
+        "Efficient multimodal artificial intelligence",
+        "Vision-language models",
+        "3D and 4D perception",
+        "Point-cloud learning",
+        "Reinforcement learning",
+        "Robot intelligence"
+      ],
+      "sameAs": [
+        "https://github.com/samitha278",
+        "https://www.linkedin.com/in/samitha-bandara-52211a254"
+      ]
+    }
+  }
+  </script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root, [data-theme="dark"] {
-      --bg:#000; --bg2:#0a0a0a; --card:#1c1c1e; --card2:#2c2c2e;
-      --border:rgba(255,255,255,0.07); --border2:rgba(255,255,255,0.13);
-      --text:#f5f5f7; --text2:#a1a1a6; --text3:#636366;
-      --blue:#0A84FF; --purple:#BF5AF2; --teal:#32D74B; --orange:#FF9F0A;
-      --grad:linear-gradient(135deg,#0A84FF 0%,#BF5AF2 100%);
-      --grad2:linear-gradient(135deg,#0A84FF 0%,#5E5CE6 50%,#BF5AF2 100%);
-      --glow-blue:rgba(10,132,255,0.25); --glow-purple:rgba(191,90,242,0.2);
-      --font:'Inter',system-ui,-apple-system,sans-serif;
-      --r:16px; --rs:10px;
-      --nav-bg:rgba(0,0,0,0.72); --mob-bg:rgba(10,10,10,0.97); --sb:#333;
-    }
-    [data-theme="light"] {
-      --bg:#f5f5f7; --bg2:#fff; --card:rgba(255,255,255,0.92); --card2:#e8e8ed;
-      --border:rgba(0,0,0,0.07); --border2:rgba(0,0,0,0.14);
-      --text:#1d1d1f; --text2:#6e6e73; --text3:#aeaeb2;
-      --blue:#007AFF; --purple:#9f59d9; --teal:#28a745; --orange:#d4750a;
-      --grad:linear-gradient(135deg,#007AFF 0%,#9f59d9 100%);
-      --grad2:linear-gradient(135deg,#007AFF 0%,#5856D6 50%,#9f59d9 100%);
-      --glow-blue:rgba(0,122,255,0.18); --glow-purple:rgba(159,89,217,0.15);
-      --nav-bg:rgba(245,245,247,0.86); --mob-bg:rgba(248,248,250,0.98); --sb:#ccc;
-    }
-    [data-theme="light"] body::after{opacity:.010;}
-    [data-theme="light"] .blob-1{background:radial-gradient(circle,rgba(0,122,255,.10) 0%,transparent 70%);}
-    [data-theme="light"] .blob-2{background:radial-gradient(circle,rgba(159,89,217,.07) 0%,transparent 70%);}
-    [data-theme="light"] .blob-3{background:radial-gradient(circle,rgba(86,84,214,.05) 0%,transparent 70%);}
-    [data-theme="light"] .sec-div{background:linear-gradient(90deg,transparent,rgba(0,0,0,.07) 30%,rgba(0,0,0,.07) 70%,transparent);}
-    [data-theme="light"] .nav-links a:hover{background:rgba(0,0,0,.04);}
-    [data-theme="light"] .tl-card:hover{box-shadow:0 24px 60px -10px rgba(0,0,0,.12),0 0 0 1px var(--border2);}
-
-    html{scroll-behavior:smooth;font-size:16px;}
-    body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;transition:background .4s,color .4s;}
-    ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:transparent;} ::-webkit-scrollbar-thumb{background:var(--sb);border-radius:3px;}
-    ::selection{background:rgba(10,132,255,.3);} a{text-decoration:none;color:inherit;}
-
-    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.018;pointer-events:none;z-index:9999;}
-    .blob{position:fixed;border-radius:50%;filter:blur(130px);pointer-events:none;z-index:0;}
-    .blob-1{width:700px;height:700px;top:-200px;right:-200px;background:radial-gradient(circle,rgba(10,132,255,.13) 0%,transparent 70%);}
-    .blob-2{width:500px;height:500px;bottom:30%;left:-200px;background:radial-gradient(circle,rgba(191,90,242,.10) 0%,transparent 70%);}
-    .blob-3{width:400px;height:400px;bottom:-100px;right:15%;background:radial-gradient(circle,rgba(94,92,230,.08) 0%,transparent 70%);}
-
-    .wrap{max-width:1000px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
-
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-bottom:1px solid var(--border);transition:background .4s,border-color .4s;}
-    .nav-inner{max-width:1000px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
-    .nav-brand{font-size:.9rem;font-weight:700;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .nav-links{display:flex;align-items:center;gap:4px;}
-    .nav-links a{font-size:.78rem;font-weight:450;color:var(--text2);padding:5px 10px;border-radius:8px;letter-spacing:-.01em;transition:color .2s,background .2s;}
-    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05);}
-    .nav-cv{font-size:.78rem!important;font-weight:550!important;color:white!important;background:var(--blue)!important;padding:6px 14px!important;border-radius:20px!important;}
-    .nav-cv:hover{opacity:.88!important;}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
-    .hamburger span{display:block;width:20px;height:1.5px;background:var(--text2);border-radius:2px;transition:.3s;}
-    .mob-menu{display:none;position:fixed;top:56px;left:0;right:0;z-index:99;background:var(--mob-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 24px 20px;flex-direction:column;gap:4px;transition:background .4s;}
-    .mob-menu a{font-size:.9rem;font-weight:450;color:var(--text2);padding:10px 12px;border-radius:10px;transition:color .2s,background .2s;}
-    .mob-menu a:hover{color:var(--text);background:rgba(255,255,255,.05);}
-    .mob-menu.open{display:flex;}
-
-    /* Theme toggle */
-    .theme-toggle{display:flex;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:3px;gap:2px;transition:border-color .3s,background .4s;}
-    .theme-btn{width:28px;height:28px;border:none;border-radius:16px;background:transparent;color:var(--text3);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;font-size:.68rem;font-family:var(--font);font-weight:550;}
-    .theme-btn.active{background:var(--blue);color:white;}
-    .theme-btn:hover:not(.active){color:var(--text2);}
-
-    /* Reveal */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);}
-    .reveal.d1{transition-delay:.08s;} .reveal.d2{transition-delay:.16s;} .reveal.d3{transition-delay:.24s;} .reveal.d4{transition-delay:.32s;}
-    .reveal.visible{opacity:1;transform:none;}
-
-    /* HERO */
-    #hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px;}
-    .hero-layout{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;}
-    .hero-left{min-width:0;}
-    .hero-img-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;flex-shrink:0;}
-    .hero-avatar{width:210px;height:210px;border-radius:26px;position:relative;overflow:hidden;border:1px solid var(--border2);box-shadow:0 32px 80px -16px rgba(0,0,0,.6),0 0 0 1px var(--border);transition:box-shadow .3s,transform .35s;}
-    .hero-avatar:hover{transform:scale(1.025) translateY(-4px);box-shadow:0 40px 100px -16px rgba(0,0,0,.7),0 0 40px var(--glow-blue),0 0 0 1px var(--border2);}
-    .hero-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-    .hero-ph{width:100%;height:100%;background:linear-gradient(145deg,#080808 0%,#1c1c1e 40%,#0d1a2e 70%,#1a0d2e 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-    .hero-ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(10,132,255,.25) 0%,transparent 55%),radial-gradient(ellipse at 70% 70%,rgba(191,90,242,.2) 0%,transparent 55%);}
-    .hero-ph-icon{position:relative;z-index:1;color:rgba(255,255,255,.15);}
-    .avatar-ring{position:absolute;inset:-2px;border-radius:28px;background:var(--grad);opacity:0;z-index:-1;transition:opacity .3s;}
-    .hero-avatar:hover .avatar-ring{opacity:.45;}
-    .hero-status{display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:500;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:20px;padding:6px 12px;white-space:nowrap;}
-    .sdot{width:7px;height:7px;border-radius:50%;background:#32D74B;position:relative;flex-shrink:0;}
-    .sdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:rgba(50,215,75,.3);animation:pulse 1.8s ease-out infinite;}
-    @keyframes pulse{0%{transform:scale(.8);opacity:1;}100%{transform:scale(2.4);opacity:0;}}
-
-    .hero-chip{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:550;letter-spacing:.07em;text-transform:uppercase;color:var(--blue);background:rgba(10,132,255,.10);border:1px solid rgba(10,132,255,.20);border-radius:20px;padding:5px 13px;margin-bottom:1.6rem;}
-
-    /* ★ FIXED: name toned down from clamp(3.2rem,8vw,6.5rem) */
-    .hero-name{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800;letter-spacing:-.04em;line-height:1.06;color:var(--text);margin-bottom:1.1rem;}
-    .hero-title{font-size:clamp(.92rem,1.7vw,1.12rem);font-weight:400;color:var(--text2);letter-spacing:-.015em;margin-bottom:1.8rem;max-width:500px;line-height:1.62;}
-    .hero-title strong{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;}
-    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem;}
-    .btn{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:550;border-radius:980px;padding:10px 20px;letter-spacing:-.01em;cursor:pointer;border:none;transition:all .25s;}
-    .btn-blue{color:white;background:var(--blue);}
-    .btn-blue:hover{opacity:.85;box-shadow:0 8px 30px rgba(10,132,255,.35);transform:translateY(-1px);}
-    .btn-out{color:var(--text2);background:transparent;border:1px solid var(--border2);}
-    .btn-out:hover{color:var(--text);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.04);}
-    .hero-socials{display:flex;gap:8px;flex-wrap:wrap;}
-    .sp{display:inline-flex;align-items:center;gap:6px;font-size:.73rem;font-weight:450;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:6px 11px;transition:all .2s;}
-    .sp:hover{color:var(--text);border-color:var(--border2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.4);}
-
-    /* Sections */
-    section{padding:90px 0;}
-    .sec-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem;}
-    .sec-title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:750;letter-spacing:-.035em;color:var(--text);margin-bottom:.45rem;line-height:1.15;}
-    .sec-sub{font-size:.9rem;color:var(--text2);letter-spacing:-.01em;max-width:440px;}
-    .sec-div{height:1px;background:linear-gradient(90deg,transparent,var(--border) 30%,var(--border) 70%,transparent);}
-
-    /* ABOUT */
-    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;margin-top:2.5rem;align-items:start;}
-    .about-text{font-size:.94rem;color:var(--text2);line-height:1.82;letter-spacing:-.01em;}
-    .about-text p{margin-bottom:1rem;} .about-text p:last-child{margin-bottom:0;}
-    .gw{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:650;}
-    .about-cards{display:flex;flex-direction:column;gap:12px;}
-    .asc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;transition:border-color .25s,transform .25s,box-shadow .25s;}
-    .asc:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
-    .snum{font-size:1.7rem;font-weight:800;letter-spacing:-.04em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .slabel{font-size:.75rem;color:var(--text3);letter-spacing:-.01em;margin-top:2px;}
-
-    /* TIMELINE */
-    .tl-wrap{position:relative;margin-top:2.5rem;padding-left:28px;}
-    .tl-line{position:absolute;left:0;top:10px;bottom:10px;width:1.5px;background:linear-gradient(180deg,var(--blue) 0%,var(--purple) 100%);opacity:.35;}
-    .tl-line::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--blue) 0%,var(--purple) 100%);filter:blur(4px);opacity:.5;}
-    .tl-item{position:relative;margin-bottom:24px;} .tl-item:last-child{margin-bottom:0;}
-    .tl-node{position:absolute;left:-34px;top:22px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(10,132,255,.2),0 0 14px rgba(10,132,255,.5);}
-    .tl-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 28px;transition:border-color .3s,transform .3s cubic-bezier(.2,0,0,1),box-shadow .3s;transform-style:preserve-3d;}
-    .tl-card:hover{border-color:var(--border2);transform:translateY(-4px) scale(1.008);box-shadow:0 24px 60px -10px rgba(0,0,0,.6),0 0 0 1px var(--border2);}
-    .tl-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px;flex-wrap:wrap;}
-    .tl-role{font-size:1rem;font-weight:700;letter-spacing:-.025em;color:var(--text);}
-    .tl-date{font-size:.7rem;font-weight:550;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:rgba(10,132,255,.1);border:1px solid rgba(10,132,255,.18);border-radius:6px;padding:4px 10px;white-space:nowrap;}
-    .tl-org{font-size:.84rem;font-weight:550;color:var(--text2);margin-bottom:12px;letter-spacing:-.01em;}
-    .tl-body{font-size:.855rem;color:var(--text2);line-height:1.75;letter-spacing:-.01em;}
-    .tl-body ul{padding-left:1.1em;margin-top:6px;} .tl-body li{margin-bottom:5px;}
-    .tl-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
-    .tag{font-size:.69rem;font-weight:500;color:var(--text2);background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:6px;padding:3px 8px;}
-    .tl-sup{font-size:.77rem;color:var(--text3);margin-top:10px;font-style:italic;}
-    .tl-sup span{color:var(--text2);font-style:normal;font-weight:500;}
-
-    /* EDUCATION */
-    .edu-cards{display:flex;flex-direction:column;gap:16px;margin-top:2.5rem;}
-    .edu-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 30px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;transition:border-color .25s,transform .25s,box-shadow .25s;}
-    .edu-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 20px 50px rgba(0,0,0,.45);}
-    .edu-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(10,132,255,.2) 0%,rgba(191,90,242,.2) 100%);border:1px solid rgba(255,255,255,.1);color:var(--blue);flex-shrink:0;}
-    .edu-deg{font-size:.98rem;font-weight:700;letter-spacing:-.025em;color:var(--text);margin-bottom:3px;}
-    .edu-uni{font-size:.84rem;color:var(--text2);margin-bottom:5px;font-weight:500;}
-    .edu-det{font-size:.79rem;color:var(--text3);line-height:1.65;}
-    .edu-hi{color:var(--text2);font-weight:600;}
-    .edu-date{display:inline-flex;margin-top:9px;font-size:.69rem;font-weight:550;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:rgba(10,132,255,.1);border:1px solid rgba(10,132,255,.18);border-radius:6px;padding:3px 9px;}
-
-    /* PROJECTS */
-    .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:14px;margin-top:2.5rem;}
-    .pc{text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;transition:border-color .3s,transform .3s cubic-bezier(.2,0,0,1),box-shadow .3s;}
-    .pc:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 20px 50px -10px rgba(0,0,0,.55);}
-    .pc-head{display:flex;align-items:center;justify-content:space-between;}
-    .pi{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(10,132,255,.12);border:1px solid rgba(10,132,255,.2);color:var(--blue);}
-    .pi.pu{background:rgba(191,90,242,.12);border-color:rgba(191,90,242,.2);color:var(--purple);}
-    .pi.te{background:rgba(50,215,75,.10);border-color:rgba(50,215,75,.2);color:var(--teal);}
-    .pi.or{background:rgba(255,159,10,.10);border-color:rgba(255,159,10,.2);color:var(--orange);}
-    .pgh{color:var(--text3);transition:color .2s;} .pgh:hover{color:var(--text);}
-    .pname{font-size:.92rem;font-weight:700;letter-spacing:-.025em;color:var(--text);}
-    .pdesc{font-size:.79rem;color:var(--text2);line-height:1.68;letter-spacing:-.01em;flex-grow:1;}
-    .ptags{display:flex;flex-wrap:wrap;gap:5px;}
-
-    /* SKILLS */
-    .sk-sec{padding-top:0;}
-    .sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:12px;margin-top:2rem;}
-    .sc{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:16px 18px;transition:border-color .25s,transform .25s;}
-    .sc:hover{border-color:var(--border2);transform:translateY(-2px);}
-    .scat{font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--blue);margin-bottom:9px;}
-    .sitems{display:flex;flex-wrap:wrap;gap:5px;}
-    .si{font-size:.72rem;color:var(--text2);background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:5px;padding:3px 7px;}
-
-    /* FOOTER */
-    footer{border-top:1px solid var(--border);padding:64px 0 40px;position:relative;z-index:1;}
-    .f-brand{margin-bottom:36px;}
-    .fb-name{font-size:.88rem;font-weight:650;letter-spacing:-.025em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px;}
-    .fb-desc{font-size:.77rem;color:var(--text3);line-height:1.6;letter-spacing:-.01em;}
-    .fg{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:40px;padding-bottom:48px;border-bottom:1px solid var(--border);margin-bottom:32px;}
-    .fc-title{font-size:.67rem;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.9rem;}
-    .fl{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
-    .fl a{font-size:.78rem;color:var(--text2);letter-spacing:-.01em;display:inline-flex;align-items:center;gap:7px;transition:color .2s;}
-    .fl a:hover{color:var(--text);}
-    .fb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-    .fb-copy{font-size:.72rem;color:var(--text3);letter-spacing:-.01em;}
-    .fsoc{display:flex;gap:8px;align-items:center;}
-    .fi{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border);color:var(--text3);transition:all .2s;}
-    .fi:hover{color:var(--text);border-color:var(--border2);transform:translateY(-2px);}
-
-    /* Responsive */
-    @media(max-width:768px){
-      .nav-links{display:none;} .hamburger{display:flex;}
-      .hero-layout{grid-template-columns:1fr;gap:28px;}
-      .hero-img-wrap{flex-direction:row;justify-content:flex-start;}
-      .hero-avatar{width:88px;height:88px;border-radius:16px;}
-      .about-grid{grid-template-columns:1fr;gap:28px;}
-      .tl-wrap{padding-left:22px;} .tl-node{left:-28px;}
-      .tl-head{flex-direction:column;gap:6px;}
-      .edu-card{grid-template-columns:1fr;gap:14px;}
-      .proj-grid{grid-template-columns:1fr 1fr;}
-      .sk-grid{grid-template-columns:1fr 1fr;}
-      .fg{grid-template-columns:1fr 1fr;}
-      section{padding:64px 0;}
-    }
-    @media(max-width:520px){
-      .proj-grid{grid-template-columns:1fr;}
-      .hero-socials{gap:6px;} .sp span{display:none;} .sp{padding:7px;}
-      .sk-grid{grid-template-columns:1fr;}
-      .fg{grid-template-columns:1fr;gap:20px;}
-    }
+    *,*::before,*::after{box-sizing:border-box}
+    :root{color-scheme:dark;--bg:#07111f;--bg-soft:#0b1728;--surface:#101d30;--surface-2:#14243a;--text:#eef5ff;--muted:#9cadc4;--quiet:#70839c;--line:rgba(191,211,237,.13);--blue:#5aa9ff;--cyan:#59d6cf;--nav:rgba(7,17,31,.83);--shadow:0 24px 70px rgba(0,0,0,.24);--radius:22px;--max:1120px}
+    [data-theme="light"]{color-scheme:light;--bg:#f5f8fc;--bg-soft:#ecf2f9;--surface:#fff;--surface-2:#f1f5fa;--text:#101b2d;--muted:#52647b;--quiet:#78889b;--line:rgba(23,49,82,.12);--blue:#176fca;--cyan:#087f7c;--nav:rgba(245,248,252,.86);--shadow:0 22px 60px rgba(29,57,91,.10)}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 8%,rgba(90,169,255,.13),transparent 28%),radial-gradient(circle at 8% 60%,rgba(89,214,207,.08),transparent 28%);z-index:-1}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}.shell{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.skip{position:fixed;left:16px;top:-80px;background:var(--text);color:var(--bg);padding:10px 14px;border-radius:10px;z-index:300}.skip:focus{top:16px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav);border-bottom:1px solid var(--line);backdrop-filter:blur(18px) saturate(150%)}.nav-inner{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:760;letter-spacing:-.03em}.brand-mark{color:var(--blue)}.nav-links{display:flex;align-items:center;gap:5px}.nav-links a{padding:8px 11px;color:var(--muted);font-size:.84rem;border-radius:9px}.nav-links a:hover,.nav-links a:focus-visible{background:var(--surface);color:var(--text)}.nav-actions{display:flex;align-items:center;gap:8px}.icon-button{width:37px;height:37px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--muted);cursor:pointer}.icon-button:hover{color:var(--text);border-color:rgba(90,169,255,.38)}.mobile-toggle{display:none}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-size:.86rem;font-weight:650;transition:transform .2s,border-color .2s,background .2s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--blue);border-color:var(--blue);color:#04101d}.button.secondary{background:var(--surface)}
+    .hero{min-height:calc(100svh - 66px);display:grid;align-items:center;padding:76px 0 84px}.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:80px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:.74rem;font-weight:750;letter-spacing:.11em;text-transform:uppercase}.eyebrow::before{content:"";width:26px;height:1px;background:currentColor}h1{font-size:clamp(3.35rem,8vw,6.7rem);line-height:.9;letter-spacing:-.075em;margin:22px 0 25px;font-weight:790;max-width:780px}.hero-lead{max-width:680px;font-size:clamp(1.06rem,2.1vw,1.34rem);line-height:1.55;color:var(--muted);letter-spacing:-.018em}.hero-lead strong{color:var(--text);font-weight:660}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}.social-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;color:var(--muted);font-size:.84rem}.social-row a{display:inline-flex;align-items:center;gap:7px}.social-row a:hover{color:var(--blue)}.portrait-wrap{position:relative;max-width:330px;margin-inline:auto}.portrait{aspect-ratio:4/5;object-fit:cover;border-radius:34px;border:1px solid var(--line);box-shadow:var(--shadow);filter:saturate(.88)}.portrait-card{position:absolute;right:-28px;bottom:24px;padding:13px 16px;background:var(--surface);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);font-size:.78rem;color:var(--muted)}.portrait-card strong{display:block;color:var(--text);font-size:.9rem}.live-dot{display:inline-block;width:8px;height:8px;background:#47d39b;border-radius:50%;margin-right:7px;box-shadow:0 0 0 5px rgba(71,211,155,.12)}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--line);margin-top:-1px}.metric{background:var(--surface);padding:28px}.metric-value{font-size:1.55rem;font-weight:760;letter-spacing:-.04em}.metric-label{color:var(--muted);font-size:.79rem;margin-top:3px}section{padding:106px 0}.section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:54px;margin-bottom:42px;align-items:end}.section-kicker{color:var(--blue);font-size:.73rem;font-weight:760;letter-spacing:.13em;text-transform:uppercase}.section-title{font-size:clamp(2rem,4vw,3.15rem);line-height:1.08;letter-spacing:-.052em;margin:0}.section-intro{color:var(--muted);max-width:680px;margin:13px 0 0}
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}.panel{background:linear-gradient(150deg,var(--surface),var(--bg-soft));border:1px solid var(--line);border-radius:var(--radius);padding:30px}.panel p{color:var(--muted);margin:0}.panel p+p{margin-top:16px}.focus-list{display:grid;gap:12px}.focus-item{display:flex;gap:12px;align-items:flex-start;padding-bottom:12px;border-bottom:1px solid var(--line)}.focus-item:last-child{border:0;padding-bottom:0}.focus-index{color:var(--blue);font-size:.72rem;font-weight:750;margin-top:3px}.focus-item strong{display:block;font-size:.92rem}.focus-item span:last-child{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
+    .affiliations{padding:34px 0 0}.affiliation-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 25px}.affiliation-title{color:var(--quiet);font-size:.67rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase;margin-bottom:15px}.logo-strip{display:grid;grid-template-columns:1.25fr .7fr 1.35fr .95fr .85fr;gap:10px}.logo-chip{height:64px;padding:9px 14px;display:grid;place-items:center;background:#fff;border:1px solid rgba(15,35,60,.09);border-radius:12px}.logo-chip img{height:39px;max-width:135px;width:auto;object-fit:contain}.logo-chip.uom{background:#101725}.logo-chip.uom img{height:37px}.logo-chip.smu img{height:45px}.logo-chip.smart img{height:39px}.logo-chip.m3s{background:#121b2e;color:#fff;display:flex;gap:8px;padding-inline:14px}.m3s-mark{font-size:1.15rem;font-weight:850;letter-spacing:-.04em;color:#68c8ff}.m3s-name{font-size:.57rem;line-height:1.14;text-transform:uppercase;letter-spacing:.06em;color:#b7c5d8}.affiliation-note{color:var(--quiet);font-size:.73rem;margin:13px 0 0}.experience-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:31px}.entry-top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.entry-role{font-size:1.35rem;font-weight:730;letter-spacing:-.035em}.entry-org{color:var(--muted);font-size:.9rem;margin-top:3px}.entry-status{color:var(--cyan);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;padding:5px 9px;border:1px solid rgba(89,214,207,.24);border-radius:999px}.entry-copy{color:var(--muted);max-width:790px;margin:22px 0 0}.entry-copy li+li{margin-top:7px}.programme-note{color:var(--quiet);font-size:.76rem;margin:18px 0 0;padding-top:17px;border-top:1px solid var(--line);max-width:760px}
+    .research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.research-card{position:relative;overflow:hidden;min-height:270px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:29px;display:flex;flex-direction:column}.research-card::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;background:rgba(90,169,255,.07);right:-55px;bottom:-70px}.card-label{font-size:.69rem;color:var(--cyan);font-weight:730;letter-spacing:.1em;text-transform:uppercase}.research-card h3{font-size:1.35rem;line-height:1.25;letter-spacing:-.03em;margin:14px 0 10px}.research-card p{color:var(--muted);font-size:.9rem;margin:0;max-width:500px}.collab{margin-top:15px;color:var(--quiet);font-size:.75rem}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:23px}.tag{padding:5px 9px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);color:var(--muted);font-size:.7rem}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.project{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:23px;transition:transform .2s,border-color .2s}.project:hover{transform:translateY(-3px);border-color:rgba(90,169,255,.35)}.project-top{display:flex;justify-content:space-between;gap:20px}.project h3{font-size:1rem;margin:0;letter-spacing:-.025em}.project-arrow{color:var(--blue)}.project p{color:var(--muted);font-size:.8rem;margin:9px 0 0}.project .tags{padding-top:16px}.education{display:grid;grid-template-columns:1fr .72fr;gap:18px}.education-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:29px}.education-card h3{font-size:1.1rem;line-height:1.35;margin:0;letter-spacing:-.025em}.education-card .institution{color:var(--muted);font-size:.84rem;margin-top:3px}.edu-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.edu-pill{font-size:.76rem;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:6px 10px}.edu-pill strong{color:var(--text)}.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill-group{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:17px}.skill-group h3{font-size:.78rem;color:var(--blue);text-transform:uppercase;letter-spacing:.09em;margin:0 0 11px}.skill-group p{color:var(--muted);font-size:.82rem;margin:0}
+    .contact{padding-top:40px}.contact-card{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;background:linear-gradient(135deg,rgba(90,169,255,.14),rgba(89,214,207,.07));border:1px solid rgba(90,169,255,.22);border-radius:30px;padding:45px}.contact-card h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.05;letter-spacing:-.052em;margin:0}.contact-card p{color:var(--muted);margin:14px 0 0}.contact-actions{display:flex;flex-direction:column;gap:9px}footer{padding:48px 0 34px;color:var(--quiet);font-size:.76rem}.footer-inner{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:25px}.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:860px){.nav-links{display:none}.mobile-toggle{display:grid}.nav-links.open{position:absolute;display:flex;flex-direction:column;align-items:stretch;top:66px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:16px 20px}.hero-grid{grid-template-columns:1fr;gap:48px}.hero{padding-top:66px}.portrait-wrap{width:min(330px,78vw)}.section-head,.about-grid,.education,.contact-card{grid-template-columns:1fr}.section-head{gap:14px}.skills{grid-template-columns:repeat(2,1fr)}.logo-strip{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:620px){.shell{width:min(100% - 28px,var(--max))}.nav-cv{display:none}h1{font-size:clamp(3rem,17vw,4.6rem)}.metrics{grid-template-columns:1fr}.metric{padding:20px}.entry-top{flex-direction:column;gap:10px}.research-grid,.projects,.skills{grid-template-columns:1fr}.contact-card{padding:29px}.portrait-card{right:-8px}.footer-inner{flex-direction:column}.education-card{padding:23px}.logo-strip{grid-template-columns:repeat(2,1fr)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.project{transition:none}}
   </style>
 </head>
 <body>
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-brand">SSB</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="cv.html" class="nav-cv">View CV</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="theme-toggle" id="themeToggle">
-        <button class="theme-btn active" data-t="dark"  title="Dark"><i data-lucide="moon"  style="width:12px;height:12px;"></i></button>
-        <button class="theme-btn"        data-t="light" title="Light"><i data-lucide="sun"   style="width:12px;height:12px;"></i></button>
-        <button class="theme-btn"        data-t="auto"  title="Auto">Auto</button>
-      </div>
-      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-<div class="mob-menu" id="mobMenu">
-  <a href="#about"      onclick="closeMob()">About</a>
-  <a href="#experience" onclick="closeMob()">Experience</a>
-  <a href="#education"  onclick="closeMob()">Education</a>
-  <a href="#projects"   onclick="closeMob()">Projects</a>
-  <a href="cv.html" style="color:var(--blue);font-weight:550;">View CV →</a>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="wrap">
-    <div class="hero-layout">
-      <div class="hero-left">
-        <div class="hero-chip reveal"><i data-lucide="sparkles" style="width:11px;height:11px;"></i>Open to Research Collaborations</div>
-        <h1 class="hero-name reveal d1">Samitha<br>Sahan<br>Bandara.</h1>
-        <p class="hero-title reveal d2">
-          <strong>Engineering Undergraduate</strong> &amp; <strong>Deep Learning Researcher</strong>
-          — specializing in <strong>VLM Acceleration</strong> &amp; <strong>Multimodal AI</strong>.
-        </p>
-        <div class="hero-actions reveal d3">
-          <a href="#experience" class="btn btn-blue"><i data-lucide="briefcase" style="width:13px;height:13px;"></i>View Experience</a>
-          <a href="cv.html"     class="btn btn-out"><i data-lucide="file-text"  style="width:13px;height:13px;"></i>Download CV</a>
-        </div>
-        <div class="hero-socials reveal d4">
-          <a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" class="sp">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://github.com/samitha278" target="_blank" class="sp">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            <span>GitHub</span>
-          </a>
-          <a href="https://x.com/samitha____" target="_blank" class="sp">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-            <span>X</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero-img-wrap reveal d2">
-        <div class="hero-avatar">
-          <div class="avatar-ring"></div>
-          <!--
-            ══════════════════════════════════════════════════
-            TO ADD YOUR PHOTO (dp.jpeg):
-            1. Put dp.jpeg in the same folder as index.html
-            2. Delete the <div class="hero-ph">...</div> block
-            3. Add this line instead:
-               <img src="dp.jpeg" alt="Samitha Sahan Bandara" />
-            ══════════════════════════════════════════════════
-          -->
-          <img src="dp.jpeg" alt="Samitha Sahan Bandara" />
-        </div>
-        <div class="hero-status"><div class="sdot"></div>Available for Research</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-div"></div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <p class="sec-label reveal">About</p>
-    <h2 class="sec-title reveal d1">Who I Am</h2>
-    <p class="sec-sub  reveal d2">Researcher. Engineer. Builder.</p>
-    <div class="about-grid">
-      <div class="about-text reveal d2">
-        <p>I'm Samitha Sahan Bandara — an Engineering undergraduate at the <span class="gw">University of Moratuwa</span>, Sri Lanka (CGPA: 3.79/4.00, Dean's List Semesters 1–3), passionate about building AI systems that see, reason, and understand the world.</p>
-        <p>My research sits at the intersection of <span class="gw">Computer Vision</span>, <span class="gw">Multimodal LLMs</span>, and <span class="gw">VLM Acceleration</span> — specifically neuro-symbolic caching, spectral adapters, and efficient inference for edge deployment on resource-constrained hardware.</p>
-        <p>Currently a Visiting Research Student at <span class="gw">Singapore Management University</span> under Prof. Archan Misra, contributing to a <span class="gw">conference</span> paper on accelerated VLM inference.</p>
-        <p>Outside research I build foundational architectures from scratch (8+ GitHub projects), write technical essays on Medium, and contribute to open-source ML. I believe the best AI is built by those who care deeply about both the science and the humans it serves.</p>
-      </div>
-      <div class="about-cards">
-        <div class="asc reveal d2"><div class="snum">3.79</div><div class="slabel">CGPA / 4.00 · Dean's List Sems 1, 2 &amp; 3</div></div>
-        <!-- <div class="asc reveal d3"><div class="snum">NeurIPS</div><div class="slabel">2026 target · VLM Acceleration paper</div></div> -->
-        <div class="asc reveal d4"><div class="snum">8+</div><div class="slabel">From-scratch AI implementations on GitHub</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-div"></div>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="wrap">
-    <p class="sec-label reveal">Experience</p>
-    <h2 class="sec-title reveal d1">Research Positions</h2>
-    <p class="sec-sub  reveal d2">Where ideas met rigorous implementation</p>
-    <div class="tl-wrap reveal d2">
-      <div class="tl-line"></div>
-      <div class="tl-item">
-        <div class="tl-node"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div>
-              <div class="tl-role">Visiting Research Student</div>
-              <div class="tl-org">Singapore Management University · School of Computing &amp; Information Systems · Singapore</div>
-            </div>
-            <span class="tl-date">Present</span>
-          </div>
-          <div class="tl-body">
-            <ul>
-              <li>Analyzing VLM internal structure and developing <strong style="color:var(--text);">neuro-symbolic caching methods</strong> integrating neural latent embeddings with SMT symbolic representations for embodied reasoning and math generation.</li>
-              <li>Investigating <strong style="color:var(--text);">VLM acceleration</strong> techniques including spectral adapters and model compression for efficient edge deployment on resource-constrained hardware.</li>
-              <li>Contributing to a research paper targeting <strong style="color:var(--text);">Conference</strong> on accelerated VLM inference.</li>
-            </ul>
-          </div>
-          <div class="tl-tags">
-            <span class="tag">VLM Acceleration</span><span class="tag">Neuro Symbolic AI</span>
-            <span class="tag">Adapters</span><span class="tag">Model Compression</span>
-            <span class="tag">Edge AI</span><span class="tag">PyTorch</span>
-          </div>
-          <div class="tl-sup">Advisor: <span>Prof. Archan Misra</span> — Vice Provost (Research), SMU</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-div"></div>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="wrap">
-    <p class="sec-label reveal">Education</p>
-    <h2 class="sec-title reveal d1">Academic Background</h2>
-    <div class="edu-cards">
-      <div class="edu-card reveal d2">
-        <div class="edu-icon"><i data-lucide="landmark" style="width:20px;height:20px;"></i></div>
-        <div>
-          <div class="edu-deg">B.Sc. Engineering (Honours) in ENTC</div>
-          <div class="edu-uni">University of Moratuwa, Sri Lanka</div>
-          <div class="edu-det">
-            Electronics &amp; Telecommunication Engineering. CGPA: <span class="edu-hi">3.79 / 4.00</span> · <span class="edu-hi">Dean's List</span> — Semesters 1, 2 &amp; 3.<br>
-            Coursework: Computer Vision, Pattern Recognition, Signals &amp; Systems, Communication Systems &amp; Networks, Electronic Control Systems, Data Structures &amp; Algorithms, Engineering Mathematics.
-          </div>
-          <div class="edu-date">2023 – Present</div>
-        </div>
-      </div>
-      <div class="edu-card reveal d3">
-        <div class="edu-icon"><i data-lucide="book-open" style="width:20px;height:20px;"></i></div>
-        <div>
-          <div class="edu-deg">GCE Advanced Level — Physical Science</div>
-          <div class="edu-uni">Nalanda College, Colombo, Sri Lanka</div>
-          <div class="edu-det">
-            Results: <span class="edu-hi">3A's</span> · Z-score: <span class="edu-hi">2.3862</span> · Island Rank: <span class="edu-hi">278</span> — Top 0.6% nationwide.<br>
-            Combined Mathematics, Physics, Chemistry.
-          </div>
-          <div class="edu-date">2013 – 2022</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-div"></div>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <p class="sec-label reveal">Projects</p>
-    <h2 class="sec-title reveal d1">From-Scratch Implementations</h2>
-    <p class="sec-sub  reveal d2">Core AI architectures built from the ground up — no wrappers, all principles</p>
-    <div class="proj-grid">
-
-      <a href="https://github.com/samitha278/CoreLlama" target="_blank" class="pc reveal d1">
-        <div class="pc-head"><div class="pi"><i data-lucide="cpu" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">CoreLlama</div>
-        <div class="pdesc">Llama 2 from scratch — RMSNorm, RoPE, Grouped Query Attention, KV-Cache, SwiGLU. Full implementation without high-level library wrappers.</div>
-        <div class="ptags"><span class="tag">LLM</span><span class="tag">GQA</span><span class="tag">RoPE</span><span class="tag">KV-Cache</span></div>
-      </a>
-
-      <a href="https://github.com/samitha278/VLM-gamma" target="_blank" class="pc reveal d2">
-        <div class="pc-head"><div class="pi pu"><i data-lucide="layers" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">VLM-gamma</div>
-        <div class="pdesc">Multimodal Vision-Language Model — Transformer decoder + ViT encoder + Grouped Query Attention for image-text reasoning tasks.</div>
-        <div class="ptags"><span class="tag">VLM</span><span class="tag">ViT</span><span class="tag">Multimodal</span></div>
-      </a>
-
-      <a href="https://github.com/samitha278/gpt2-lite" target="_blank" class="pc reveal d3">
-        <div class="pc-head"><div class="pi te"><i data-lucide="zap" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">gpt2-lite</div>
-        <div class="pdesc">Full GPT-2 reproduction with optimized training pipeline, GPT-2/3 hyperparameters, and custom BPE tokenizer. End-to-end training run.</div>
-        <div class="ptags"><span class="tag">GPT-2</span><span class="tag">BPE</span><span class="tag">Training</span></div>
-      </a>
-
-      <a href="https://github.com/samitha278/nanoViT" target="_blank" class="pc reveal d1">
-        <div class="pc-head"><div class="pi or"><i data-lucide="scan-eye" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">nanoViT</div>
-        <div class="pdesc">Vision Transformer from scratch — patch embedding, multi-head self-attention, MLP head, and full image classification pipeline.</div>
-        <div class="ptags"><span class="tag">ViT</span><span class="tag">Attention</span><span class="tag">CV</span></div>
-      </a>
-
-      <a href="https://github.com/samitha278/gpt-from-scratch" target="_blank" class="pc reveal d2">
-        <div class="pc-head"><div class="pi pu"><i data-lucide="code-2" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">GPT from Scratch</div>
-        <div class="pdesc">Progressive build: Bigram model → full Transformer Decoder with Multi-Head Attention. Training, sampling, and evaluation pipelines included.</div>
-        <div class="ptags"><span class="tag">Transformer</span><span class="tag">LM</span><span class="tag">PyTorch</span></div>
-      </a>
-
-      <a href="https://github.com/samitha278/miniVGG" target="_blank" class="pc reveal d3">
-        <div class="pc-head"><div class="pi"><i data-lucide="grid-3x3" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">miniVGG</div>
-        <div class="pdesc">VGG-inspired image classifier with custom convolution, pooling, and fully connected layers — zero high-level APIs.</div>
-        <div class="ptags"><span class="tag">CNN</span><span class="tag">VGG</span><span class="tag">From Scratch</span></div>
-      </a>
-
-      <a href="https://github.com/samitha278/gpt-from-scratch" target="_blank" class="pc reveal d1">
-        <div class="pc-head"><div class="pi te"><i data-lucide="type" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">GPT Tokenizer</div>
-        <div class="pdesc">BPE training algorithm from scratch — encode() / decode() functions replicating the exact tokenizer used in OpenAI's GPT series.</div>
-        <div class="ptags"><span class="tag">BPE</span><span class="tag">Tokenization</span><span class="tag">NLP</span></div>
-      </a>
-
-      <a href="https://github.com/samitha278/multilayer-perceptron-char-lm" target="_blank" class="pc reveal d2">
-        <div class="pc-head"><div class="pi or"><i data-lucide="brain" style="width:17px;height:17px;"></i></div><span class="pgh"><i data-lucide="github" style="width:15px;height:15px;"></i></span></div>
-        <div class="pname">MLP Char-LM</div>
-        <div class="pdesc">Character-level language model with full backpropagation, Batch Normalization, and Kaiming Initialization — no shortcuts.</div>
-        <div class="ptags"><span class="tag">MLP</span><span class="tag">BatchNorm</span><span class="tag">PyTorch</span></div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<div class="sec-div"></div>
-
-<!-- SKILLS -->
-<section class="sk-sec">
-  <div class="wrap">
-    <p class="sec-label reveal">Skills</p>
-    <h2 class="sec-title reveal d1">Technical Toolkit</h2>
-    <div class="sk-grid">
-      <div class="sc reveal d1"><div class="scat">Languages</div><div class="sitems"><span class="si">Python</span><span class="si">C</span><span class="si">C++</span><span class="si">MATLAB</span></div></div>
-      <div class="sc reveal d2"><div class="scat">Frameworks</div><div class="sitems"><span class="si">PyTorch</span><span class="si">TensorFlow</span><span class="si">NumPy</span><span class="si">Pandas</span><span class="si">OpenCV</span><span class="si">LangChain</span></div></div>
-      <div class="sc reveal d3"><div class="scat">AI Research</div><div class="sitems"><span class="si">VLM Acceleration</span><span class="si">Model Compression</span><span class="si">Spectral Adapters</span><span class="si">Edge Inference</span></div></div>
-      <div class="sc reveal d4"><div class="scat">Deployment</div><div class="sitems"><span class="si">GPU Optimization</span><span class="si">HPC / Slurm</span><span class="si">Docker</span><span class="si">Linux</span></div></div>
-      <div class="sc reveal d1"><div class="scat">Hardware</div><div class="sitems"><span class="si">STM32</span><span class="si">PCB Design</span><span class="si">Embedded Systems</span></div></div>
-      <div class="sc reveal d2"><div class="scat">Tools</div><div class="sitems"><span class="si">HuggingFace</span><span class="si">W&amp;B</span><span class="si">LaTeX</span><span class="si">Git</span></div></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="fg reveal">
-      <div>
-        <div class="fb-name">Samitha Sahan Bandara</div>
-        <div class="fb-desc">Engineering Undergraduate · Deep Learning Researcher · VLM Acceleration</div>
-      </div>
-      <div>
-        <div class="fc-title">Research</div>
-        <ul class="fl">
-          <li><a href="#projects">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            Projects
-          </a></li>
-          <li><a href="cv.html">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            Curriculum Vitae
-          </a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="fc-title">Code</div>
-        <ul class="fl">
-          <li><a href="https://github.com/samitha278" target="_blank">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="fc-title">Connect</div>
-        <ul class="fl">
-          <li><a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a></li>
-          <li><a href="https://x.com/samitha____" target="_blank">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-            X / Twitter
-          </a></li>
-          <li><a href="mailto:samithab@smu.edu.sg">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email
-          </a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="fb reveal d1">
-      <div class="fb-copy">© 2025 Samitha Sahan Bandara · Built with care &amp; caffeine ☕</div>
-      <div class="fsoc">
-        <a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" class="fi">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://github.com/samitha278" target="_blank" class="fi">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="https://x.com/samitha____" target="_blank" class="fi">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-        <a href="mailto:samithab@smu.edu.sg" class="fi">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  lucide.createIcons();
-
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:.06,rootMargin:'0px 0px -32px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  document.querySelectorAll('.tl-card,.pc,.asc,.edu-card').forEach(card=>{
-    card.addEventListener('mousemove',e=>{
-      const r=card.getBoundingClientRect();
-      const dx=(e.clientX-r.left-r.width/2)/(r.width/2);
-      const dy=(e.clientY-r.top-r.height/2)/(r.height/2);
-      card.style.transform=`translateY(-4px) scale(1.007) rotateX(${-dy*1.8}deg) rotateY(${dx*1.8}deg)`;
-    });
-    card.addEventListener('mouseleave',()=>{card.style.transform='';});
-  });
-
-  const ham=document.getElementById('ham');
-  const mm=document.getElementById('mobMenu');
-  ham.addEventListener('click',()=>mm.classList.toggle('open'));
-  function closeMob(){mm.classList.remove('open');}
-
-  const html=document.documentElement;
-  const mq=window.matchMedia('(prefers-color-scheme: dark)');
-  const tBtns=document.querySelectorAll('.theme-btn');
-  function applyTheme(val){
-    const resolved=val==='auto'?(mq.matches?'dark':'light'):val;
-    html.setAttribute('data-theme',resolved);
-    tBtns.forEach(b=>b.classList.toggle('active',b.dataset.t===val));
-    localStorage.setItem('ssb-theme',val);
-  }
-  tBtns.forEach(btn=>btn.addEventListener('click',()=>applyTheme(btn.dataset.t)));
-  mq.addEventListener('change',()=>{if(localStorage.getItem('ssb-theme')==='auto')applyTheme('auto');});
-  applyTheme(localStorage.getItem('ssb-theme')||'dark');
-  setTimeout(()=>lucide.createIcons(),50);
-</script>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav aria-label="Primary navigation"><div class="shell nav-inner"><a class="brand" href="#top"><span class="brand-mark">SB</span> / Research</a><div class="nav-links" id="navLinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#education">Education</a></div><div class="nav-actions"><button class="icon-button" id="themeButton" type="button" aria-label="Switch theme" title="Switch theme">&#9788;</button><a class="button secondary nav-cv" href="output/pdf/Samitha_Bandara_CV.pdf" download>Download CV</a><button class="icon-button mobile-toggle" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button></div></div></nav>
+  <main id="main">
+    <header class="hero" id="top"><div class="shell hero-grid"><div><div class="eyebrow reveal">AI researcher &amp; engineer</div><h1 class="reveal">Samitha<br>Bandara.</h1><p class="hero-lead reveal">Final-year engineering undergraduate researching <strong>efficient multimodal AI</strong>, <strong>3D/4D perception</strong>, and <strong>learning-based robotic control</strong>.</p><div class="hero-actions reveal"><a class="button primary" href="#research">Explore research <span aria-hidden="true">&#8595;</span></a><a class="button secondary" href="output/pdf/Samitha_Bandara_CV.pdf" download>Download CV</a></div><div class="social-row reveal"><a href="https://github.com/samitha278" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a><a href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">&#8599;</span></a><a href="mailto:samithasahanssb@gmail.com">Email <span aria-hidden="true">&#8599;</span></a></div></div><div class="portrait-wrap reveal"><img class="portrait" src="dp.jpeg" alt="Portrait of Samitha Bandara" width="640" height="800"><div class="portrait-card"><strong><span class="live-dot"></span>Open to collaboration</strong>Multimodal AI &amp; robotics research</div></div></div></header>
+    <div class="shell metrics reveal" aria-label="Profile highlights"><div class="metric"><div class="metric-value">3.79 / 4.00</div><div class="metric-label">CGPA across 110 completed GPA credits</div></div><div class="metric"><div class="metric-value">2 manuscripts</div><div class="metric-label">Under review at a leading international AI conference</div></div><div class="metric"><div class="metric-value">May 2027</div><div class="metric-label">Expected degree completion</div></div></div>
+    <section class="affiliations" aria-labelledby="affiliations-title"><div class="shell affiliation-panel reveal"><div class="affiliation-title" id="affiliations-title">Education, research &amp; collaboration network</div><div class="logo-strip"><a class="logo-chip uom" href="https://uom.lk/" target="_blank" rel="noreferrer" aria-label="University of Moratuwa"><img src="assets/uom-logo.png" alt="University of Moratuwa"></a><a class="logo-chip smu" href="https://www.smu.edu.sg/" target="_blank" rel="noreferrer" aria-label="Singapore Management University"><img src="assets/smu-logo.png" alt="SMU"></a><a class="logo-chip smart" href="https://smart.mit.edu/" target="_blank" rel="noreferrer" aria-label="Singapore-MIT Alliance for Research and Technology"><img src="assets/smart-logo.png" alt="SMART"></a><a class="logo-chip" href="https://nus.edu.sg/" target="_blank" rel="noreferrer" aria-label="National University of Singapore"><img src="assets/nus-logo.svg" alt="NUS"></a><a class="logo-chip m3s" href="https://m3s.mit.edu/" target="_blank" rel="noreferrer" aria-label="Mens, Manus, and Machina programme"><span class="m3s-mark">M3S</span><span class="m3s-name">Mens, Manus<br>&amp; Machina</span></a></div><p class="affiliation-note">University of Moratuwa · SMU research experience supported through SMART M3S · NUS research collaboration</p></div></section>
+    <section id="about"><div class="shell"><div class="section-head reveal"><div class="section-kicker">01 / About</div><div><h2 class="section-title">Building efficient intelligence for machines that perceive and act.</h2><p class="section-intro">My work connects multimodal learning, visual representation reuse, robot perception, and reinforcement learning. I am particularly interested in systems that reason effectively without unnecessary computation.</p></div></div><div class="about-grid"><div class="panel reveal"><p>I am a final-year Electronic and Telecommunication Engineering undergraduate at the University of Moratuwa, Sri Lanka. I approach machine learning from first principles, combining research questions with careful implementation and empirical evaluation.</p><p>My long-term goal is to pursue a fully funded PhD and build an academic research career in efficient multimodal AI and robot intelligence.</p></div><div class="panel focus-list reveal"><div class="focus-item"><span class="focus-index">01</span><div><strong>Efficient multimodal learning</strong><span>Representation reuse, compression, and accelerated inference.</span></div></div><div class="focus-item"><span class="focus-index">02</span><div><strong>3D/4D perception</strong><span>Dynamic scenes, point clouds, and transformation-aware models.</span></div></div><div class="focus-item"><span class="focus-index">03</span><div><strong>Robot intelligence</strong><span>Learning-based perception, reasoning, and control.</span></div></div></div></div></div></section>
+    <section id="experience"><div class="shell"><div class="section-head reveal"><div class="section-kicker">02 / Experience</div><div><h2 class="section-title">Research experience</h2><p class="section-intro">Applied research on reducing redundant computation in vision-language systems.</p></div></div><article class="experience-card reveal"><div class="entry-top"><div><div class="entry-role">Research Assistant</div><div class="entry-org">School of Computing and Information Systems, Singapore Management University</div></div><span class="entry-status">Completed</span></div><ul class="entry-copy"><li>Investigated efficient vision-language models for repeated and multi-turn visual interactions through visual information reuse and compression.</li><li>Explored DCT-based spectral compression, reconstruction adapters, and visual attention or KV-cache reuse.</li><li>Contributed to two manuscripts under review at a leading international AI conference - first author on one and co-author on another.</li></ul><p class="programme-note">Research supported through the SMART Mens, Manus, and Machina (M3S) programme.</p></article></div></section>
+    <section id="research"><div class="shell"><div class="section-head reveal"><div class="section-kicker">03 / Research</div><div><h2 class="section-title">Current directions</h2><p class="section-intro">Ongoing projects are presented by their research scope, without preliminary outcome claims.</p></div></div><div class="research-grid"><article class="research-card reveal"><div class="card-label">Ongoing research</div><h3>Representation reuse for point-cloud VLMs</h3><p>Exploring transformation-aware reuse of visual representations across dynamic point-cloud scenes to reduce redundant processing as the viewpoint and scene evolve.</p><div class="tags"><span class="tag">Point-cloud VLMs</span><span class="tag">Dynamic scenes</span><span class="tag">Representation reuse</span></div></article><article class="research-card reveal"><div class="card-label">Final-year project</div><h3>Learning-based stabilization for an aerial manipulator</h3><p>Developing reinforcement-learning-based stabilization for a simulated aerial platform carrying a robotic arm, with a focus on PPO and Gazebo-based evaluation.</p><div class="collab">Research collaboration with Prof. Rajat Talak, National University of Singapore.</div><div class="tags"><span class="tag">Reinforcement learning</span><span class="tag">PPO</span><span class="tag">Gazebo</span><span class="tag">Robotic control</span></div></article></div></div></section>
+    <section id="projects"><div class="shell"><div class="section-head reveal"><div class="section-kicker">04 / Engineering</div><div><h2 class="section-title">Selected implementations</h2><p class="section-intro">From-scratch projects that strengthen my understanding of transformer architecture, multimodal learning, and efficient training.</p></div></div><div class="projects"><a class="project reveal" href="https://github.com/samitha278/transformer-optim" target="_blank" rel="noreferrer"><div class="project-top"><h3>Transformer Optimization</h3><span class="project-arrow">&#8599;</span></div><p>Adapters, quantization, KV caching, and practical efficiency techniques for transformer models.</p><div class="tags"><span class="tag">PEFT</span><span class="tag">Quantization</span><span class="tag">KV cache</span></div></a><a class="project reveal" href="https://github.com/samitha278/CoreLlama" target="_blank" rel="noreferrer"><div class="project-top"><h3>CoreLlama</h3><span class="project-arrow">&#8599;</span></div><p>A from-scratch Llama 2 implementation with RMSNorm, RoPE, GQA, KV caching, and SwiGLU.</p><div class="tags"><span class="tag">PyTorch</span><span class="tag">Llama 2</span><span class="tag">GQA</span></div></a><a class="project reveal" href="https://github.com/samitha278/VLM-gamma" target="_blank" rel="noreferrer"><div class="project-top"><h3>VLM-gamma</h3><span class="project-arrow">&#8599;</span></div><p>A multimodal vision-language model built from scratch using a ViT encoder and transformer decoder.</p><div class="tags"><span class="tag">VLM</span><span class="tag">ViT</span><span class="tag">Multimodal AI</span></div></a><a class="project reveal" href="https://github.com/samitha278/gpt2-lite" target="_blank" rel="noreferrer"><div class="project-top"><h3>gpt2-lite</h3><span class="project-arrow">&#8599;</span></div><p>GPT-2 reproduction with a custom training pipeline, mixed precision, optimized attention, and BPE tokenization.</p><div class="tags"><span class="tag">GPT-2</span><span class="tag">Training systems</span><span class="tag">BPE</span></div></a></div></div></section>
+    <section id="education"><div class="shell"><div class="section-head reveal"><div class="section-kicker">05 / Education</div><div><h2 class="section-title">Academic foundation</h2></div></div><div class="education"><article class="education-card reveal"><h3>BSc Engineering Honours in Electronic and Telecommunication Engineering</h3><div class="institution">University of Moratuwa, Sri Lanka</div><div class="edu-meta"><span class="edu-pill"><strong>CGPA 3.79/4.00</strong></span><span class="edu-pill">Dean's List - Semesters 1, 2 &amp; 3</span><span class="edu-pill">Expected 31 May 2027</span></div></article><article class="education-card reveal"><h3>GCE Advanced Level - Physical Science</h3><div class="institution">Nalanda College, Colombo</div><div class="edu-meta"><span class="edu-pill"><strong>3 A grades</strong></span><span class="edu-pill">Z-score 2.3862</span><span class="edu-pill">Island rank 278</span></div></article></div></div></section>
+    <section><div class="shell"><div class="section-head reveal"><div class="section-kicker">06 / Toolkit</div><div><h2 class="section-title">Technical strengths</h2></div></div><div class="skills"><div class="skill-group reveal"><h3>Research</h3><p>Vision-language models, computer vision, reinforcement learning, 3D/4D perception, transformers</p></div><div class="skill-group reveal"><h3>Programming</h3><p>Python, C, C++, MATLAB</p></div><div class="skill-group reveal"><h3>ML stack</h3><p>PyTorch, Hugging Face, TensorFlow, NumPy, Pandas, OpenCV</p></div><div class="skill-group reveal"><h3>Systems</h3><p>Linux, Slurm, Docker, GPU training and optimization</p></div><div class="skill-group reveal"><h3>Robotics</h3><p>Gazebo, PPO, simulation-based control, robotic perception</p></div><div class="skill-group reveal"><h3>Engineering</h3><p>STM32, embedded C, PCB design, sensors and data acquisition</p></div></div></div></section>
+    <section class="contact" id="contact"><div class="shell contact-card reveal"><div><h2>Interested in thoughtful research collaboration.</h2><p>Especially in efficient multimodal learning, dynamic-scene perception, and robot intelligence.</p></div><div class="contact-actions"><a class="button primary" href="mailto:samithasahanssb@gmail.com">Email Samitha</a><a class="button secondary" href="https://linkedin.com/in/samitha-bandara-52211a254" target="_blank" rel="noreferrer">Connect on LinkedIn</a><a class="button secondary" href="output/pdf/Samitha_Bandara_CV.pdf" download>Download CV</a></div></div></section>
+  </main>
+  <footer><div class="shell footer-inner"><span>&copy; <span id="year"></span> Samitha Bandara</span><span>Researcher · Engineer · Builder</span></div></footer>
+  <script>
+    const root=document.documentElement;const saved=localStorage.getItem('theme');if(saved){root.dataset.theme=saved}else if(matchMedia('(prefers-color-scheme: light)').matches){root.dataset.theme='light'}
+    document.getElementById('themeButton').addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=next;localStorage.setItem('theme',next)});
+    const menuButton=document.getElementById('menuButton');const navLinks=document.getElementById('navLinks');menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
+    document.getElementById('year').textContent=new Date().getFullYear();const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
 </body>
 </html>

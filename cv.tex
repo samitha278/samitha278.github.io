@@ -1,0 +1,122 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=0.52in,bottom=0.48in,left=0.58in,right=0.58in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\definecolor{ink}{HTML}{122033}
+\definecolor{muted}{HTML}{53657A}
+\definecolor{blue}{HTML}{176FCA}
+\definecolor{line}{HTML}{D8E1EB}
+
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue,pdftitle={Samitha Bandara - Curriculum Vitae},pdfauthor={Samitha Bandara}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\scriptsize\color{muted}Samitha Bandara}
+\fancyfoot[R]{\scriptsize\color{muted}\thepage}
+\titleformat{\section}{\large\bfseries\color{ink}}{}{0pt}{}[{\color{line}\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+\setlist[itemize]{leftmargin=14pt,itemsep=2pt,topsep=3pt,parsep=0pt,label={\color{blue}\small\textbullet}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.15}
+
+\newcommand{\entry}[4]{%
+  \textbf{\color{ink}#1}\hfill{\small\color{muted}#2}\\[-1pt]
+  {\small\color{muted}#3}\hfill{\small\color{muted}#4}\par
+}
+\newcommand{\project}[3]{%
+  \textbf{\color{ink}#1}\if\relax\detokenize{#2}\relax\else\hspace{5pt}{\small\href{#2}{GitHub}}\fi\\[-1pt]
+  {\small\color{muted}#3}\par
+}
+
+\begin{document}
+\begin{center}
+  {\fontsize{26}{29}\selectfont\bfseries\color{ink} Samitha Bandara}\\[4pt]
+  {\normalsize\color{muted}Final-Year Engineering Undergraduate \textbar{} AI Researcher}\\[7pt]
+  {\small Sri Lanka \quad\textcolor{line}{\textbar}\quad
+    \href{mailto:samithasahanssb@gmail.com}{samithasahanssb@gmail.com} \quad\textcolor{line}{\textbar}\quad
+    \href{https://github.com/samitha278}{GitHub} \quad\textcolor{line}{\textbar}\quad
+    \href{https://linkedin.com/in/samitha-bandara-52211a254}{LinkedIn} \quad\textcolor{line}{\textbar}\quad
+    \href{https://samitha278.github.io}{Portfolio}}
+\end{center}
+\vspace{2pt}
+\color{ink}
+
+\section{Research Profile}
+{\small Final-year Electronic and Telecommunication Engineering undergraduate researching efficient multimodal AI, visual representation reuse, 3D/4D perception, and learning-based robotic control. Interested in resource-aware models that perceive, reason, and act effectively, with the long-term goal of pursuing a PhD and an academic research career.}
+
+\section{Research Experience}
+\entry{Research Assistant}{}{Singapore Management University, School of Computing and Information Systems}{Singapore}
+\begin{itemize}
+  \item Investigated efficient vision-language models for repeated and multi-turn visual interactions through visual information reuse and compression.
+  \item Explored Discrete Cosine Transform (DCT) based spectral compression, layer-wise reconstruction adapters, learned selection mechanisms, and visual attention or KV-cache reuse.
+  \item Conducted experiments with multimodal models and visual question-answering benchmarks, focusing on representation efficiency and end-to-end inference cost.
+  \item Contributed to two manuscripts under review at a leading international AI conference: first author on one and co-author on another.
+\end{itemize}
+{\small\color{muted}Research supported through the SMART Mens, Manus, and Machina (M3S) programme. Supervised by Prof. Archan Misra, with close guidance from Dr. Dulanga Weerakoon.}
+
+\section{Current Research Projects}
+\project{Representation Reuse for Point-Cloud Vision-Language Models}{}{Exploring transformation-aware reuse of visual representations across dynamic point-cloud scenes to reduce redundant processing as viewpoints and scene geometry evolve.}
+\vspace{5pt}
+\project{Learning-Based Stabilization for an Aerial Manipulator}{}{Final-year project developing reinforcement-learning-based stabilization for a simulated aerial platform with a robotic arm, using PPO and Gazebo. Research collaboration with Prof. Rajat Talak, National University of Singapore.}
+
+\section{Education}
+\entry{BSc Engineering Honours in Electronic and Telecommunication Engineering}{Expected 31 May 2027}{University of Moratuwa, Sri Lanka}{CGPA: 3.79 / 4.00}
+\begin{itemize}
+  \item CGPA calculated across 110 completed GPA credits; Dean's List for Semesters 1, 2, and 3.
+  \item Relevant coursework: Pattern Recognition, Image Processing and Machine Vision, Data Structures and Algorithms, Linear Algebra, Applied Statistics, Signals and Systems, Electronic Control Systems, and Communication Networks.
+\end{itemize}
+\vspace{3pt}
+\entry{GCE Advanced Level - Physical Science}{2022}{Nalanda College, Colombo, Sri Lanka}{3 A grades}
+{\small\color{muted}Z-score: 2.3862 \textbar{} Island rank: 278 \textbar{} Combined Mathematics, Physics, and Chemistry.}
+
+\section{Research Interests}
+{\small Efficient deep learning \textbar{} Vision-language and multimodal models \textbar{} 3D/4D perception \textbar{} Robot perception and intelligence \textbar{} Reinforcement learning \textbar{} Computer vision \textbar{} World models \textbar{} Mathematics and signal processing for machine learning}
+
+\newpage
+\section{Selected Technical Projects}
+\project{Transformer Optimization}{https://github.com/samitha278/transformer-optim}{Explored LoRA/PEFT adapters, 4-bit and 8-bit quantization, KV caching, and practical efficiency techniques for transformer models.}
+\vspace{6pt}
+\project{CoreLlama - Llama 2 from Scratch}{https://github.com/samitha278/CoreLlama}{Implemented RMSNorm, Rotary Positional Embeddings, Grouped Query Attention, KV caching, and SwiGLU directly in PyTorch.}
+\vspace{6pt}
+\project{VLM-gamma - Multimodal Vision-Language Model}{https://github.com/samitha278/VLM-gamma}{Built a multimodal model from scratch using a Vision Transformer encoder, transformer decoder, and Grouped Query Attention.}
+\vspace{6pt}
+\project{gpt2-lite - GPT-2 Reproduction}{https://github.com/samitha278/gpt2-lite}{Reproduced GPT-2 with a custom training pipeline covering mixed precision, compiled execution, optimized attention, gradient accumulation, scheduling, validation, and BPE tokenization.}
+\vspace{6pt}
+\project{nanoViT - Vision Transformer from Scratch}{https://github.com/samitha278/nanoViT}{Implemented patch embeddings, multi-head self-attention, transformer blocks, and image-classification pipelines.}
+\vspace{6pt}
+\project{MLP Character-Level Language Model}{https://github.com/samitha278/multilayer-perceptron-char-lm}{Implemented a character-level neural language model with backpropagation, batch normalization, Kaiming initialization, training, and evaluation.}
+
+\section{Academic Engineering Projects}
+\project{Battery Profiler - STM32 Embedded System}{https://github.com/samitha278/Battery_Profiler}{Designed a PCB with voltage and current sensing and a MOSFET load; implemented STM32 firmware for real-time acquisition and battery characterization.}
+\vspace{5pt}
+\project{Analog Five-Band Equalizer}{https://github.com/samitha278/5-Band-Equalizer}{Designed frequency-selective analog filter stages, gain controls, and a tested PCB prototype for real-time audio equalization.}
+
+\section{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}>{\small\bfseries\color{ink}}p{0.19\textwidth} >{\small\color{muted}}X@{}}
+Programming & Python, C, C++, MATLAB \\
+Machine Learning & PyTorch, Hugging Face, TensorFlow, NumPy, Pandas, OpenCV \\
+Research Topics & Vision-language models, transformers, computer vision, reinforcement learning, 3D/4D perception, model compression \\
+Systems & Linux, Slurm, Docker, GPU training and optimization, Git \\
+Robotics & Gazebo, PPO, simulation-based control, robotic perception \\
+Embedded Engineering & STM32, embedded C, PCB design, sensors, data acquisition \\
+Documentation & LaTeX, technical writing, Microsoft Office \\
+Languages & English, Sinhala \\
+\end{tabularx}
+
+\section{Leadership and Activities}
+\begin{itemize}
+  \item Group leader for the final-year aerial-manipulator research project; responsible primarily for the reinforcement-learning component.
+  \item Prefect, Nalanda College (2017--2019); participated in athletics, football, the Interact Club, and the Photographic and Art Society.
+  \item Member of the University of Moratuwa Nature Team.
+\end{itemize}
+\end{document}

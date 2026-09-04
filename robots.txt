@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samitha278.github.io/sitemap.xml
