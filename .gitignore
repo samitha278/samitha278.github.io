@@ -1,2 +1,5 @@
 notes/
 tmp/
+# Keep original camera files local; publish the optimized web portrait.
+assets/*.heic
+assets/*.HEIC
