@@ -35,8 +35,12 @@ document.addEventListener("keydown", (event) => {
 });
 window.matchMedia("(min-width: 981px)").addEventListener("change", closeMenu);
 // Keep bookmarks to sections of the former one-page site useful.
-if (location.pathname.endsWith("/") || location.pathname.endsWith("/index.html")) {
-  const destinations = { about: "about.html", experience: "experience.html", research: "research.html", projects: "projects.html", education: "education.html", contact: "contact.html" };
-  const destination = destinations[location.hash.slice(1)];
-  if (destination) location.replace(destination);
+function routeLegacySection() {
+  if (location.pathname.endsWith("/") || location.pathname.endsWith("/index.html")) {
+    const destinations = { about: "index.html", experience: "experience.html", research: "research.html", projects: "projects.html", education: "education.html", contact: "contact.html" };
+    const destination = destinations[location.hash.slice(1)];
+    if (destination) location.replace(destination);
+  }
 }
+routeLegacySection();
+window.addEventListener("hashchange", routeLegacySection);
