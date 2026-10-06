@@ -15,7 +15,7 @@ updateTheme();
 document.getElementById("year").textContent = new Date().getFullYear();
 // Keep bookmarks to sections of the former one-page site useful.
 if (location.pathname.endsWith("/") || location.pathname.endsWith("/index.html")) {
-  const destinations = { experience: "experience.html", research: "research.html", projects: "projects.html", education: "education.html", contact: "contact.html" };
+  const destinations = { about: "about.html", experience: "experience.html", research: "research.html", projects: "projects.html", education: "education.html", contact: "contact.html" };
   const destination = destinations[location.hash.slice(1)];
   if (destination) location.replace(destination);
 }
