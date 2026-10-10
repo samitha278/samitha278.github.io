@@ -1,9 +1,8 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=0.58in,bottom=0.58in,left=0.65in,right=0.65in]{geometry}
+\usepackage[top=0.6in,bottom=0.6in,left=0.7in,right=0.7in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\renewcommand{\familydefault}{\sfdefault}
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -12,69 +11,83 @@
 \usepackage{microtype}
 
 \definecolor{ink}{HTML}{111111}
-\definecolor{muted}{HTML}{555555}
-\definecolor{line}{HTML}{CCCCCC}
-\hypersetup{colorlinks=true,urlcolor=ink,linkcolor=ink,pdftitle={Samitha Bandara - Curriculum Vitae},pdfauthor={Samitha Bandara}}
+\definecolor{accent}{HTML}{1F3A5F}
+\definecolor{muted}{HTML}{4A4A4A}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdftitle={Samitha Bandara - Curriculum Vitae},pdfauthor={Samitha Bandara}}
 \pagestyle{empty}
-\titleformat{\section}{\fontsize{12}{14}\selectfont\bfseries\color{ink}}{}{0pt}{}[{\color{line}\titlerule[0.5pt]}]
-\titlespacing*{\section}{0pt}{10pt}{5pt}
-\setlist[itemize]{leftmargin=14pt,itemsep=3pt,topsep=4pt,parsep=0pt}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{2pt}
-\renewcommand{\arraystretch}{1.18}
 
-\newcommand{\project}[3]{%
-  \textbf{#1}\if\relax\detokenize{#2}\relax\else\hfill{\small\href{#2}{GitHub}}\fi\par
-  #3\par
+\titleformat{\section}{\large\scshape\color{accent}}{}{0pt}{}[\vspace{-3pt}{\color{accent}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+\setlist[itemize]{leftmargin=13pt,itemsep=1.5pt,topsep=2pt,parsep=0pt,label=\textbullet}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.2}
+
+% \entry{title}{date}{second line}
+\newcommand{\entry}[3]{%
+  {\raggedright\bfseries #1\hfill{\mdseries\small #2}\par}
+  \if\relax\detokenize{#3}\relax\else{\itshape\color{muted}#3}\par\fi
 }
+% \project{name}{url}{description}
+\newcommand{\project}[3]{%
+  \textbf{#1}\hfill{\small\href{#2}{GitHub}}\par
+  {\color{muted}#3}\par
+}
+
 \begin{document}
 \color{ink}
-{\fontsize{26}{30}\selectfont\bfseries Samitha Bandara}\par
-\vspace{2pt}
-{\small\href{mailto:samithasahanssb@gmail.com}{samithasahanssb@gmail.com}
-\quad\textbar\quad\href{https://samitha278.github.io/}{samitha278.github.io}\par
-\href{https://github.com/samitha278}{GitHub}
-\quad\textbar\quad\href{https://www.linkedin.com/in/samitha-bandara-52211a254}{LinkedIn}
-\quad\textbar\quad Sri Lanka}\par
-\vspace{4pt}
-{\color{muted}Research interests: deep learning, reinforcement learning, robotics, and computer vision.}
+
+\begin{center}
+  {\fontsize{24}{28}\selectfont\scshape Samitha Bandara}\par
+  \vspace{4pt}
+  {\color{muted}Final-Year Undergraduate, Electronic and Telecommunication Engineering, University of Moratuwa}\par
+  \vspace{4pt}
+  {\small\href{mailto:samithasahanssb@gmail.com}{samithasahanssb@gmail.com}
+  \enspace$\cdot$\enspace\href{https://samitha278.github.io/}{samitha278.github.io}
+  \enspace$\cdot$\enspace\href{https://github.com/samitha278}{github.com/samitha278}
+  \enspace$\cdot$\enspace\href{https://www.linkedin.com/in/samitha-bandara-52211a254}{LinkedIn}
+  \enspace$\cdot$\enspace Sri Lanka}\par
+\end{center}
+
+\section{Research Interests}
+Deep learning, reinforcement learning, robotics, and computer vision.
 
 \section{Education}
-\textbf{University of Moratuwa, Sri Lanka}\par
-BSc Engineering Honours in Electronic and Telecommunication Engineering\par
-{\small\color{muted}Final-year undergraduate \textbar{} Expected completion: 31 May 2027\par
-CGPA: \textbf{3.82 / 4.00} \textbar{} Dean's List: Semesters 1, 2, and 3.}\par
-\vspace{3pt}
-\textbf{Nalanda College, Colombo}\par
-{\small GCE Advanced Level, Physical Science (2022): 3 A grades; island rank 278.}
+\entry{University of Moratuwa, Sri Lanka}{Expected May 2027}{B.Sc. Engineering Honours in Electronic and Telecommunication Engineering}
+CGPA: \textbf{3.82 / 4.00} \enspace$\cdot$\enspace Dean's List: Semesters 1, 2, 3, and 6\par
+\vspace{5pt}
+\entry{Nalanda College, Colombo}{2022}{GCE Advanced Level, Physical Science}
+3 A grades \enspace$\cdot$\enspace Z-score 2.3862 \enspace$\cdot$\enspace Island rank 278\par
 
 \section{Research Experience}
-\textbf{Research Assistant - Singapore Management University}\par
-{\small\color{muted}School of Computing and Information Systems}
+\entry{Research Assistant, Singapore Management University}{Jan 2026 -- Aug 2026}{School of Computing and Information Systems (SCIS), supported by the SMART M3S programme}
 \begin{itemize}
-  \item Researched efficient vision-language models through visual information reuse and compression.
+  \item Supervision: Prof.\ Archan Misra, Dr.\ Dulanga Weerakoon, and Prasenjit Karmakar (PhD candidate, IIT Kharagpur).
+  \item Researched KV-cache compression and reuse in vision-language models for multi-turn visual question answering.
   \item Evaluated multimodal models on visual question-answering benchmarks.
+  \item Two manuscripts under review: first author on one, co-author on the other.
 \end{itemize}
-{\small\color{muted}Supported through SMART M3S. Supervised by Prof. Archan Misra, with guidance from Dr. Dulanga Weerakoon.}\par
-{\small Two manuscripts under review: first author on one, co-author on the other.}
 
-\section{Ongoing Research}
-\project{Point-cloud vision-language models}{}{Studying how models can reuse visual information when a 3D scene changes.}
-\vspace{4pt}
-\project{Aerial robot stabilization}{}{Using reinforcement learning to help a drone with a robotic arm stay stable in simulation.}
-{\small\color{muted}Final-year project in collaboration with Prof. Rajat Talak, National University of Singapore.}
+\section{Research Projects}
+\entry{Signal-Processing Techniques for KV-Cache Compression and Reuse in Vision-Language Models for Multi-Turn Visual Question Answering}{}{}
+{\color{muted}SMU SCIS, SMART M3S, and NUS. Two manuscripts under review.}\par
+\vspace{5pt}
+\entry{Equivariant Attention Reuse for 4D Point-Cloud VLMs under Camera Motion}{Ongoing}{}
+\vspace{5pt}
+\entry{Reinforcement Learning-Based Dynamic Coupling Compensation and Vision-Guided Grasping for a Hexacopter Aerial Manipulator}{}{}
+{\color{muted}Ongoing final-year project. Supervised by Prof.\ Rohan Munasinghe (University of Moratuwa), in collaboration with Prof.\ Rajat Talak (National University of Singapore). Developed in NVIDIA Isaac Sim and Isaac Lab, for a real hexacopter with a robotic arm.}\par
 
 \section{Selected Projects}
 \project{Transformer Optimization}{https://github.com/samitha278/transformer-optim}{Adapters, quantization, KV caching, and efficiency techniques for transformer models.}
-\vspace{4pt}
+\vspace{2pt}
 \project{CoreLlama}{https://github.com/samitha278/CoreLlama}{A Llama 2 implementation from scratch in PyTorch.}
-\vspace{4pt}
+\vspace{2pt}
 \project{VLM-gamma}{https://github.com/samitha278/VLM-gamma}{A vision-language model built from scratch with a Vision Transformer and transformer decoder.}
-\vspace{4pt}
+\vspace{2pt}
 \project{gpt2-lite}{https://github.com/samitha278/gpt2-lite}{A GPT-2 reproduction with a custom training pipeline and BPE tokenization.}
 
 \section{Technical Skills}
-\begin{tabularx}{\textwidth}{@{}>{\small\bfseries}p{0.22\textwidth} >{\small}X@{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\bfseries}p{0.22\textwidth} X@{}}
 Programming & Python, C, C++, MATLAB \\
 Machine learning & PyTorch, Hugging Face, NumPy, OpenCV \\
 Robotics & Reinforcement learning, Isaac Sim, Isaac Lab, Gazebo, PPO \\
